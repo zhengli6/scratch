@@ -111,9 +111,9 @@ void merger(void *params)
 
 void *sort_routine(void* Ptr)
 {   
-    int i;
     parameters *data = Ptr;
     /*
+    int i;
     printf("--------------------------------\n");
     printf("Thread id is: %d SORT: %d->%d elements\n", data->tid, data->from_index, data->to_index);
     printf("BEFORE SORT:");
@@ -144,13 +144,13 @@ void *merge_routine(void* Ptr)
     printf("--------------------------------\n");
     printf("Thread id is: %d MERGE ROUTINE \n", p->tid);
     */
-    int i, j, num_samples, num_threads, from_index, to_index;
+    int i, j, num_samples, num_threads;
     num_threads = p->nt;
     num_samples = p->ns;
 
     for(i =0; i<num_threads; i++)
     {   
-        data = (parameters*)kmalloc(sizeof(parameters));
+        data = (parameters*)vmalloc(sizeof(parameters));
         data->from_index = i*num_samples/num_threads;
         data->to_index = data->from_index + num_samples/num_threads - 1;
         /*Consider in the case of i==0, directly copy frist block to result*/
@@ -186,6 +186,13 @@ static int thread_fn(void *unused)
 // Module Initialization
 static int __init init_thread(void)
 {
+    int num_samples = 30;
+    int num_threads = 5;
+    char *FileName = "Hard coded Array";
+    int temp;
+    int i;
+
+    printk(KERN_INFO "Total number of Threads: %d\n",num_threads);
     printk(KERN_INFO "Creating Thread\n");
     //Create the kernel thread with name 'mythread'
     thread_st = kthread_run(thread_fn, NULL, "mythread");
