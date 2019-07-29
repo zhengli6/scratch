@@ -3,7 +3,6 @@
 #include <linux/kernel.h>
 #include <linux/kthread.h>
 #include <linux/delay.h>
-#include <std.io>
 
 static struct task_struct *thread_st;
 
@@ -23,7 +22,7 @@ typedef struct
 parameters *data;
 
 /* swap function*/
-void swap(int* a, int* b)
+static void swap(int* a, int* b)
 {
     int t = *a;
     *a = *b;
