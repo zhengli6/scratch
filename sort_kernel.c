@@ -173,13 +173,11 @@ void *merge_routine(void* Ptr)
 }
 
 // Function executed by kernel thread
-static int thread_fn(void *unused)
+static int thread_fn(void *Ptr)
 {
+    parameters *data = Ptr;
+    printk(KERN_INFO "Thread#%d Running\n", data->tid);
     
-    printk(KERN_INFO "Thread Running\n");
-    ssleep(2);
-    
-    printk(KERN_INFO "Thread Stopping\n");
     do_exit(0);
     return 0;
 }
@@ -189,15 +187,14 @@ static int __init init_thread(void)
     int num_samples = 12;
     int num_threads = 2;
     char *FileName = "Hard coded Array";
-    int temp;
     int i;
 
     printk(KERN_INFO" ================================================\n");
-    printk(KERN_INFO"|%47c|\n",' ');
+    printk(KERN_INFO"|%48c|\n",' ');
     printk(KERN_INFO"| Array Size:\t\t%-24d|\n", num_samples);
     printk(KERN_INFO"| Input File:\t\t%-24s|\n", FileName);
     printk(KERN_INFO"| Number of Threads:\t%-24d|\n", num_threads);
-    printk(KERN_INFO"|%47c|\n",' ');
+    printk(KERN_INFO"|%48c|\n",' ');
     printk(KERN_INFO" ================================================\n\n");
 
 
@@ -208,7 +205,7 @@ static int __init init_thread(void)
 
     for(i =0; i<=num_threads-1; i++)
     {   
-        data = (parameters*)malloc(sizeof(parameters));
+        data = (parameters*)vmalloc(sizeof(parameters));
         data->from_index = i*num_samples/num_threads;
         data->to_index = data->from_index + num_samples/num_threads - 1;
         data->tid = i;
