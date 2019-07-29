@@ -176,8 +176,8 @@ void *merge_routine(void* Ptr)
 static int thread_fn(void *Ptr)
 {
     parameters *data = Ptr;
-    printk(KERN_INFO "Thread#%d Running\n", data->tid);
-    
+    printk(KERN_INFO "Thread#%d Running\n");
+
     do_exit(0);
     return 0;
 }
@@ -210,7 +210,7 @@ static int __init init_thread(void)
         data->to_index = data->from_index + num_samples/num_threads - 1;
         data->tid = i;
         data->nt = num_threads;
-        thread_st = kthread_run(sort_routine, data, "thread#1");
+        thread_st = kthread_run(thread_fn, data, "thread#1");
         if (thread_st)
         printk(KERN_INFO "Thread#%d Created successfully\n", i);
         else
