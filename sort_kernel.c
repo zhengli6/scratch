@@ -3,13 +3,13 @@
 #include <linux/kernel.h>
 #include <linux/kthread.h>
 #include <linux/delay.h>
-#include <stdlib.h>
+
 static struct task_struct *thread_st;
 
 #define MAX_THREADS 11
-int input[500] = {2,5,3,1,6,8,7,9,53,23,3,4,7,1,71,66,22,34,51,16,22,11,13,46,24,88,192,222,431,94,29,32,18,72,17,19,122,43,15,33,36,31,30,42,57,61,39,74,12,18,37,7,14,9,29,19,86,69,23,57};/*List of integers contained in the file*/
-int list[500];  /* List of up to 500 non-negative integers with values 0<=x<=1000*/
-int result[500]; /* final sorted list*/
+int input[12] = {2,5,3,1,6,8,7,9,53,23,3,4};/*List of integers contained in the file*/
+int list[12];  /* List of up to 500 non-negative integers with values 0<=x<=1000*/
+int result[12]; /* final sorted list*/
 typedef struct
 {
     int from_index;
@@ -186,13 +186,41 @@ static int thread_fn(void *unused)
 // Module Initialization
 static int __init init_thread(void)
 {
-    int num_samples = 30;
-    int num_threads = 5;
+    int num_samples = 12;
+    int num_threads = 2;
     char *FileName = "Hard coded Array";
     int temp;
     int i;
 
-    printk(KERN_INFO "Total number of Threads: %d\n",num_threads);
+    printk(KERN_INFO" ================================================\n");
+    printk(KERN_INFO"|%47c|\n",' ');
+    printk(KERN_INFO"| Array Size:\t\t%-24d|\n", num_samples);
+    printk(KERN_INFO"| Input File:\t\t%-24s|\n", FileName);
+    printk(KERN_INFO"| Number of Threads:\t%-24d|\n", num_threads);
+    printk(KERN_INFO"|%47c|\n",' ');
+    printk(KERN_INFO" ================================================\n\n");
+
+
+    for(i=0; i<num_samples; i++)
+    {
+        list[i] = input[i];
+    }
+
+    for(i =0; i<=num_threads-1; i++)
+    {   
+        data = (parameters*)malloc(sizeof(parameters));
+        data->from_index = i*num_samples/num_threads;
+        data->to_index = data->from_index + num_samples/num_threads - 1;
+        data->tid = i;
+        data->nt = num_threads;
+        thread_st = kthread_run(sort_routine, data, "thread#1");
+        if (thread_st)
+        printk(KERN_INFO "Thread#%d Created successfully\n", i);
+        else
+            printk(KERN_ERR "Thread#%d creation failed\n", i);
+        ssleep(1);
+    };
+
     printk(KERN_INFO "Creating Thread\n");
     //Create the kernel thread with name 'mythread'
     thread_st = kthread_run(thread_fn, NULL, "mythread");
