@@ -1,0 +1,77 @@
+Module                  Size  Used by
+sort_kernel            16384  0
+vmwgfx                356352  1
+intel_powerclamp       20480  0
+crct10dif_pclmul       16384  1
+crc32_pclmul           16384  0
+ghash_clmulni_intel    16384  0
+cfg80211              856064  0
+ttm                   118784  1 vmwgfx
+drm_kms_helper        225280  1 vmwgfx
+rfkill                 28672  2 cfg80211
+8021q                  40960  0
+garp                   16384  1 8021q
+mrp                    20480  1 8021q
+stp                    16384  1 garp
+snd_intel8x0           49152  0
+llc                    16384  2 stp,garp
+aesni_intel           372736  0
+snd_ac97_codec        151552  1 snd_intel8x0
+drm                   499712  4 vmwgfx,drm_kms_helper,ttm
+aes_x86_64             20480  1 aesni_intel
+ac97_bus               16384  1 snd_ac97_codec
+snd_pcm               135168  2 snd_intel8x0,snd_ac97_codec
+crypto_simd            16384  1 aesni_intel
+cryptd                 24576  2 crypto_simd,ghash_clmulni_intel
+glue_helper            16384  1 aesni_intel
+psmouse               180224  0
+snd_timer              40960  1 snd_pcm
+intel_rapl_perf        16384  0
+snd                   110592  4 snd_intel8x0,snd_timer,snd_ac97_codec,snd_pcm
+input_leds             16384  0
+joydev                 28672  0
+e1000                 155648  0
+mousedev               24576  0
+pcspkr                 16384  0
+intel_agp              24576  0
+battery                24576  0
+syscopyarea            16384  1 drm_kms_helper
+intel_gtt              24576  1 intel_agp
+sysfillrect            16384  1 drm_kms_helper
+evdev                  24576  3
+agpgart                53248  4 intel_agp,intel_gtt,ttm,drm
+sysimgblt              16384  1 drm_kms_helper
+soundcore              16384  1 snd
+ac                     16384  0
+mac_hid                16384  0
+fb_sys_fops            16384  1 drm_kms_helper
+i2c_piix4              28672  0
+vboxguest              45056  0
+ip_tables              36864  0
+x_tables               49152  1 ip_tables
+ext4                  770048  2
+hid_generic            16384  0
+usbhid                 65536  0
+crc32c_generic         16384  0
+crc16                  16384  1 ext4
+mbcache                16384  1 ext4
+hid                   143360  2 usbhid,hid_generic
+jbd2                  131072  1 ext4
+sr_mod                 28672  0
+sd_mod                 57344  4
+cdrom                  73728  1 sr_mod
+ata_generic            16384  0
+pata_acpi              16384  0
+ahci                   40960  3
+libahci                40960  1 ahci
+ata_piix               36864  0
+serio_raw              20480  0
+atkbd                  36864  0
+libps2                 20480  2 atkbd,psmouse
+libata                282624  5 ata_piix,libahci,ahci,pata_acpi,ata_generic
+xhci_pci               20480  0
+crc32c_intel           24576  4
+scsi_mod              249856  3 sd_mod,libata,sr_mod
+xhci_hcd              278528  1 xhci_pci
+i8042                  32768  0
+serio                  28672  6 serio_raw,atkbd,psmouse,i8042
