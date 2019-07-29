@@ -34,16 +34,80 @@ int partition(int arr[], int low, int high)
 {
     int pivot = arr[high];
     int i = (low-1);
-    for (int j = low; j<high; j++)
+    int j = low;
+    for (j = low; j<high; j++)
     {
         if (arr[j]<= pivot)
         {
             i++;
-            swap(&arr[i], &arr[j]);
+            swap_pair(&arr[i], &arr[j]);
         }
     }
-    swap(&arr[i+1], &arr[high]);
+    swap_pair(&arr[i+1], &arr[high]);
     return (i+1);
+}
+
+/*Sorting thread (QuickSort)*/
+void quickSort(int arr[], int low, int high)
+{
+    int i;
+    if (low<high)
+    {
+        int pivot = partition(arr, low, high);
+
+        quickSort(arr, low, pivot-1);
+        quickSort(arr, pivot+1, high);
+    }
+}
+
+void merger(void *params)
+{
+    parameters* p = (parameters *)params; int i, j, k;
+    
+    int arr1[p->to_index - p->from_index + 1];
+    int arr2[p->from_index];
+    int n1 = sizeof(arr1) / sizeof(int);
+    int n2 = sizeof(arr2) / sizeof(int);
+    k=0;
+    /*Setup two arrays to be merged*/
+    for (i=p->from_index; i<=p->to_index; i++)
+    {
+        arr1[k] = list[i]; k++;
+    }
+    k=0;
+    for (i=0; i<=p->from_index-1; i++)
+    {   
+        arr2[k] = result[i]; k++;
+    }
+    i=0; j=0;/* position being inserted into result list */
+    int position = 0;
+    while (i < n1 && j < n2) 
+    {   
+        if (arr1[i] <= arr2[j]) 
+        {
+            result[position] = arr1[i]; 
+            position++; i++;
+
+        }
+        else
+        {
+            result[position] = arr2[j]; 
+            position++; j++;
+        } 
+    }
+
+    /* copy the remainder */
+    while (i < n1) 
+    {
+         result[position] = arr1[i]; 
+         position++; i++;
+    }      
+    
+    while (j < n2) 
+    {
+        result[position] = arr2[j];
+        position++; j++;
+    } 
 }
 
 // Function executed by kernel thread
