@@ -167,9 +167,8 @@ static int sort_fn(void *Ptr)
 
 static int merge_fn(void *Ptr)
 {
-    parameters *data = Ptr;
-    int i;
-    printk(KERN_INFO "Thread#%d Running MERGING\n", data->tid);
+    parameters *p = Ptr;
+    printk(KERN_INFO "Thread#%d Running MERGING\n", p->tid);
     int i, j, num_samples, num_threads;
     num_threads = p->nt;
     num_samples = p->ns;
