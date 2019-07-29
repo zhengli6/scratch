@@ -109,6 +109,61 @@ void merger(void *params)
     } 
 }
 
+void *sort_routine(void* Ptr)
+{   
+    int i;
+    parameters *data = Ptr;
+    printf("--------------------------------\n");
+    printf("Thread id is: %d SORT: %d->%d elements\n", data->tid, data->from_index, data->to_index);
+    printf("BEFORE SORT:");
+    for(i=data->from_index; i<=data->to_index; i++)
+    {
+        printf("%d ", list[i]);
+    }
+    printf("\n");
+    quickSort(list, data->from_index, data->to_index);
+    printf("AFTER SORT:");
+    for(i=data->from_index; i<=data->to_index; i++)
+    {
+        printf("%d ", list[i]);
+    }
+    printf("\n");
+    free(Ptr);
+    pthread_exit(NULL);
+}
+
+void *merge_routine(void* Ptr)
+{
+    parameters *p = Ptr;
+    printf("--------------------------------\n");
+    printf("Thread id is: %d MERGE ROUTINE \n", p->tid);
+    int i, j, num_samples, num_threads, from_index, to_index;
+    num_threads = p->nt;
+    num_samples = p->ns;
+
+    for(i =0; i<num_threads; i++)
+    {   
+        data = (parameters*)malloc(sizeof(parameters));
+        data->from_index = i*num_samples/num_threads;
+        data->to_index = data->from_index + num_samples/num_threads - 1;
+        /*Consider in the case of i==0, directly copy frist block to result*/
+        if (i==0)
+        {
+            for (j=0; j<=data->to_index; j++)
+            {
+                result[j] = list[j];
+            }
+        }
+        else
+        {
+            merger(data);
+        } 
+    };
+
+    free(Ptr);
+    pthread_exit(NULL);
+}
+
 // Function executed by kernel thread
 static int thread_fn(void *unused)
 {
