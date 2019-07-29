@@ -177,7 +177,19 @@ static int thread_fn(void *Ptr)
 {
     parameters *data = Ptr;
     printk(KERN_INFO "Thread#%d Running\n", data->tid);
-
+    printk(KERN_INFO "BEFORE SORT:");
+    for(i=data->from_index; i<=data->to_index; i++)
+    {
+        printk(KERN_INFO "%d ", list[i]);
+    }
+    printk(KERN_INFO "\n");
+    quickSort(list, data->from_index, data->to_index);
+    printk(KERN_INFO "AFTER SORT:");
+    for(i=data->from_index; i<=data->to_index; i++)
+    {
+        printk(KERN_INFO "%d ", list[i]);
+    }
+    printk(KERN_INFO "\n");
     do_exit(0);
     return 0;
 }
@@ -193,7 +205,7 @@ static int __init init_thread(void)
     printk(KERN_INFO"|%48c|\n",' ');
     printk(KERN_INFO"| Array Size:           %-25d|\n", num_samples);
     printk(KERN_INFO"| Input File:           %-25s|\n", FileName);
-    printk(KERN_INFO"| Number of Threads:    –%-25d|\n", num_threads);
+    printk(KERN_INFO"| Number of Threads:    %-25d|\n", num_threads);
     printk(KERN_INFO"|%48c|\n",' ');
     printk(KERN_INFO" ================================================\n\n");
 
