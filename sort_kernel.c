@@ -176,7 +176,7 @@ void *merge_routine(void* Ptr)
 static int thread_fn(void *Ptr)
 {
     parameters *data = Ptr;
-    printk(KERN_INFO "Thread Running\n");
+    printk(KERN_INFO "Thread#%d Running\n", data->tid);
 
     do_exit(0);
     return 0;
@@ -193,7 +193,7 @@ static int __init init_thread(void)
     printk(KERN_INFO"|%48c|\n",' ');
     printk(KERN_INFO"| Array Size:           %-25d|\n", num_samples);
     printk(KERN_INFO"| Input File:           %-25s|\n", FileName);
-    printk(KERN_INFO"| Number of Threads:    %-25d|\n", num_threads);
+    printk(KERN_INFO"| Number of Threads:    –%-25d|\n", num_threads);
     printk(KERN_INFO"|%48c|\n",' ');
     printk(KERN_INFO" ================================================\n\n");
 
@@ -218,14 +218,6 @@ static int __init init_thread(void)
         ssleep(1);
     };
 
-    printk(KERN_INFO "Creating Thread\n");
-    //Create the kernel thread with name 'mythread'
-    thread_st = kthread_run(thread_fn, NULL, "mythread");
-    if (thread_st)
-        printk(KERN_INFO "Thread Created successfully\n");
-    else
-        printk(KERN_ERR "Thread creation failed\n");
-    return 0;
 }
 // Module Exit
 static void __exit cleanup_thread(void)
