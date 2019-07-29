@@ -175,7 +175,7 @@ static int merge_fn(void *Ptr)
 
     for(i =0; i<num_threads; i++)
     {   
-        data = (parameters*)malloc(sizeof(parameters));
+        data = (parameters*)vmalloc(sizeof(parameters));
         data->from_index = i*num_samples/num_threads;
         data->to_index = data->from_index + num_samples/num_threads - 1;
         /*Consider in the case of i==0, directly copy frist block to result*/
@@ -232,14 +232,14 @@ static int __init init_thread(void)
         data->nt = num_threads;
         thread_st = kthread_run(sort_fn, data, "thread#1");
         if (thread_st)
-        printk(KERN_INFO "Thread#%d Created successfully\n", i);
+            printk(KERN_INFO "Thread#%d Created successfully\n", i);
         else
             printk(KERN_ERR "Thread#%d creation failed\n", i);
         ssleep(1);
     };
 
     /* ============================== MERGE SECTION ================================*/
-
+    i++
     data = (parameters*)vmalloc(sizeof(parameters));
     data->from_index = 0;
     data->to_index = 0;
@@ -249,7 +249,7 @@ static int __init init_thread(void)
 
     thread_st = kthread_run(merge_fn, data, "thread#1");
     if (thread_st)
-    printk(KERN_INFO "Thread#%d Created successfully\n", i);
+        printk(KERN_INFO "Thread#%d Created successfully\n", i);
     else
         printk(KERN_ERR "Thread#%d creation failed\n", i);
     
@@ -264,7 +264,7 @@ static int __init init_thread(void)
     {
         printk(KERN_CONT "%d ", result[i]);
     }
-
+    return 0;
 }
 // Module Exit
 static void __exit cleanup_thread(void)
