@@ -3,7 +3,7 @@
 #include <linux/kernel.h>
 #include <linux/kthread.h>
 #include <linux/delay.h>
-
+#include <stdlib.h>
 static struct task_struct *thread_st;
 
 #define MAX_THREADS 11
@@ -113,15 +113,19 @@ void *sort_routine(void* Ptr)
 {   
     int i;
     parameters *data = Ptr;
+    /*
     printf("--------------------------------\n");
     printf("Thread id is: %d SORT: %d->%d elements\n", data->tid, data->from_index, data->to_index);
     printf("BEFORE SORT:");
+
     for(i=data->from_index; i<=data->to_index; i++)
     {
         printf("%d ", list[i]);
     }
     printf("\n");
+    */
     quickSort(list, data->from_index, data->to_index);
+    /*
     printf("AFTER SORT:");
     for(i=data->from_index; i<=data->to_index; i++)
     {
@@ -130,20 +134,23 @@ void *sort_routine(void* Ptr)
     printf("\n");
     free(Ptr);
     pthread_exit(NULL);
+    */
 }
 
 void *merge_routine(void* Ptr)
 {
     parameters *p = Ptr;
+    /*
     printf("--------------------------------\n");
     printf("Thread id is: %d MERGE ROUTINE \n", p->tid);
+    */
     int i, j, num_samples, num_threads, from_index, to_index;
     num_threads = p->nt;
     num_samples = p->ns;
 
     for(i =0; i<num_threads; i++)
     {   
-        data = (parameters*)malloc(sizeof(parameters));
+        data = (parameters*)kmalloc(sizeof(parameters));
         data->from_index = i*num_samples/num_threads;
         data->to_index = data->from_index + num_samples/num_threads - 1;
         /*Consider in the case of i==0, directly copy frist block to result*/
@@ -159,9 +166,10 @@ void *merge_routine(void* Ptr)
             merger(data);
         } 
     };
-
+    /*
     free(Ptr);
     pthread_exit(NULL);
+    */
 }
 
 // Function executed by kernel thread
