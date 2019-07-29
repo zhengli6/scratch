@@ -32,11 +32,13 @@ static int __init init_thread(void)
 static void __exit cleanup_thread(void)
 {
    printk(KERN_INFO "Cleaning Up\n");
+   /*
    if (thread_st)
    {
        kthread_stop(thread_st);
        printk(KERN_INFO "Thread stopped");
    }
+   */
 }
 MODULE_LICENSE("GPL");
 module_init(init_thread);
