@@ -50,7 +50,6 @@ int partition(int arr[], int low, int high)
 /*Sorting thread (QuickSort)*/
 void quickSort(int arr[], int low, int high)
 {
-    int i;
     if (low<high)
     {
         int pivot = partition(arr, low, high);
@@ -80,33 +79,33 @@ void merger(void *params)
         arr2[k] = result[i]; k++;
     }
     i=0; j=0;/* position being inserted into result list */
-    int position = 0;
+    int pposition = 0;
     while (i < n1 && j < n2) 
     {   
         if (arr1[i] <= arr2[j]) 
         {
-            result[position] = arr1[i]; 
-            position++; i++;
+            result[pposition] = arr1[i]; 
+            pposition++; i++;
 
         }
         else
         {
-            result[position] = arr2[j]; 
-            position++; j++;
+            result[pposition] = arr2[j]; 
+            pposition++; j++;
         } 
     }
 
     /* copy the remainder */
     while (i < n1) 
     {
-         result[position] = arr1[i]; 
-         position++; i++;
+         result[pposition] = arr1[i]; 
+         pposition++; i++;
     }      
     
     while (j < n2) 
     {
-        result[position] = arr2[j];
-        position++; j++;
+        result[pposition] = arr2[j];
+        pposition++; j++;
     } 
 }
 
