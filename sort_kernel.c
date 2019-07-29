@@ -109,34 +109,6 @@ void merger(void *params)
     } 
 }
 
-void *sort_routine(void* Ptr)
-{   
-    parameters *data = Ptr;
-    /*
-    int i;
-    printf("--------------------------------\n");
-    printf("Thread id is: %d SORT: %d->%d elements\n", data->tid, data->from_index, data->to_index);
-    printf("BEFORE SORT:");
-
-    for(i=data->from_index; i<=data->to_index; i++)
-    {
-        printf("%d ", list[i]);
-    }
-    printf("\n");
-    */
-    quickSort(list, data->from_index, data->to_index);
-    /*
-    printf("AFTER SORT:");
-    for(i=data->from_index; i<=data->to_index; i++)
-    {
-        printf("%d ", list[i]);
-    }
-    printf("\n");
-    free(Ptr);
-    pthread_exit(NULL);
-    */
-}
-
 void *merge_routine(void* Ptr)
 {
     parameters *p = Ptr;
@@ -173,7 +145,7 @@ void *merge_routine(void* Ptr)
 }
 
 // Function executed by kernel thread
-static int thread_fn(void *Ptr)
+static int sort_fn(void *Ptr)
 {
     parameters *data = Ptr;
     int i;
@@ -183,14 +155,25 @@ static int thread_fn(void *Ptr)
     {
         printk(KERN_CONT "%d ", list[i]);
     }
-    printk(KERN_INFO "\n");
     quickSort(list, data->from_index, data->to_index);
     printk(KERN_INFO "AFTER SORT:");
     for(i=data->from_index; i<=data->to_index; i++)
     {
         printk(KERN_CONT "%d ", list[i]);
     }
-    printk(KERN_INFO "\n");
+    do_exit(0);
+    return 0;
+}
+
+static int merge_fn(void *Ptr)
+{
+    parameters *data = Ptr;
+    int i;
+    printk(KERN_INFO "Thread#%d Running MERGING\n", data->tid);
+    int i, j, num_samples, num_threads;
+    num_threads = p->nt;
+    num_samples = p->ns;
+    
     do_exit(0);
     return 0;
 }
@@ -223,13 +206,23 @@ static int __init init_thread(void)
         data->to_index = data->from_index + num_samples/num_threads - 1;
         data->tid = i;
         data->nt = num_threads;
-        thread_st = kthread_run(thread_fn, data, "thread#1");
+        thread_st = kthread_run(sort_fn, data, "thread#1");
         if (thread_st)
         printk(KERN_INFO "Thread#%d Created successfully\n", i);
         else
             printk(KERN_ERR "Thread#%d creation failed\n", i);
         ssleep(1);
     };
+
+
+    data = (parameters*)vmalloc(sizeof(parameters));
+    data->from_index = 0;
+    data->to_index = 0;
+    data->tid = i;
+    data->nt = num_threads;
+    data->ns = num_samples;
+
+    thread_st = kthread_run(merge_fn, data, "thread#1");
 
 }
 // Module Exit
