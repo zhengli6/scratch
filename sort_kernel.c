@@ -176,18 +176,19 @@ void *merge_routine(void* Ptr)
 static int thread_fn(void *Ptr)
 {
     parameters *data = Ptr;
+    int i;
     printk(KERN_INFO "Thread#%d Running\n", data->tid);
     printk(KERN_INFO "BEFORE SORT:");
     for(i=data->from_index; i<=data->to_index; i++)
     {
-        printk(KERN_INFO "%d ", list[i]);
+        printk(KERN_CONT "%d ", list[i]);
     }
     printk(KERN_INFO "\n");
     quickSort(list, data->from_index, data->to_index);
     printk(KERN_INFO "AFTER SORT:");
     for(i=data->from_index; i<=data->to_index; i++)
     {
-        printk(KERN_INFO "%d ", list[i]);
+        printk(KERN_CONT "%d ", list[i]);
     }
     printk(KERN_INFO "\n");
     do_exit(0);
