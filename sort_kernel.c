@@ -176,7 +176,7 @@ void *merge_routine(void* Ptr)
 static int thread_fn(void *Ptr)
 {
     parameters *data = Ptr;
-    printk(KERN_INFO "Thread#%d Running\n");
+    printk(KERN_INFO "Thread Running\n");
 
     do_exit(0);
     return 0;
@@ -191,9 +191,9 @@ static int __init init_thread(void)
 
     printk(KERN_INFO" ================================================\n");
     printk(KERN_INFO"|%48c|\n",' ');
-    printk(KERN_INFO"| Array Size:\t\t%-24d|\n", num_samples);
-    printk(KERN_INFO"| Input File:\t\t%-24s|\n", FileName);
-    printk(KERN_INFO"| Number of Threads:\t%-24d|\n", num_threads);
+    printk(KERN_INFO"| Array Size:           %-25d|\n", num_samples);
+    printk(KERN_INFO"| Input File:           %-25s|\n", FileName);
+    printk(KERN_INFO"| Number of Threads:    %-25d|\n", num_threads);
     printk(KERN_INFO"|%48c|\n",' ');
     printk(KERN_INFO" ================================================\n\n");
 
