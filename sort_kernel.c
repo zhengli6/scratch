@@ -3,6 +3,10 @@
 #include <linux/kernel.h>
 #include <linux/kthread.h>
 #include <linux/delay.h>
+#include <std.io>
+
+static struct task_struct *thread_st;
+
 #define MAX_THREADS 11
 int input[500] = {2,5,3,1,6,8,7,9,53,23,3,4,7,1,71,66,22,34,51,16,22,11,13,46,24,88,192,222,431,94,29,32,18,72,17,19,122,43,15,33,36,31,30,42,57,61,39,74,12,18,37,7,14,9,29,19,86,69,23,57};/*List of integers contained in the file*/
 int list[500];  /* List of up to 500 non-negative integers with values 0<=x<=1000*/
@@ -18,163 +22,12 @@ typedef struct
 
 parameters *data;
 
-static struct task_struct *thread_st;
-
 /* swap function*/
 void swap(int* a, int* b)
 {
     int t = *a;
     *a = *b;
     *b = t;
-}
-/*partition function*/
-int partition(int arr[], int low, int high)
-{
-    int pivot = arr[high];
-    int i = (low-1);
-    for (int j = low; j<high; j++)
-    {
-        if (arr[j]<= pivot)
-        {
-            i++;
-            swap(&arr[i], &arr[j]);
-        }
-    }
-    swap(&arr[i+1], &arr[high]);
-    return (i+1);
-}
-
-/*Sorting thread (QuickSort)*/
-void quickSort(int arr[], int low, int high)
-{
-    int i;
-    if (low<high)
-    {
-        int pivot = partition(arr, low, high);
-        /*
-        printf("Pivot: %d\n", pivot);
-        for (i=0; i<4; i++)
-        {
-            if (i==pivot)
-            {
-                printf("*%d* ",list[i]);
-            }else
-            {
-                printf("%d ",list[i]);
-            }
-            
-        }
-        printf("\n");*/
-        quickSort(arr, low, pivot-1);
-        quickSort(arr, pivot+1, high);
-    }
-}
-
-void merger(void *params)
-{
-    parameters* p = (parameters *)params; int i, j, k;
-    
-    int arr1[p->to_index - p->from_index + 1];
-    int arr2[p->from_index];
-    int n1 = sizeof(arr1) / sizeof(int);
-    int n2 = sizeof(arr2) / sizeof(int);
-    k=0;
-    /*Setup two arrays to be merged*/
-    for (i=p->from_index; i<=p->to_index; i++)
-    {
-        arr1[k] = list[i]; k++;
-    }
-    k=0;
-    for (i=0; i<=p->from_index-1; i++)
-    {   
-        arr2[k] = result[i]; k++;
-    }
-    i=0; j=0;/* position being inserted into result list */
-    int position = 0;
-    while (i < n1 && j < n2) 
-    {   
-        if (arr1[i] <= arr2[j]) 
-        {
-            result[position] = arr1[i]; 
-            position++; i++;
-
-        }
-        else
-        {
-            result[position] = arr2[j]; 
-            position++; j++;
-        } 
-    }
-
-    /* copy the remainder */
-    while (i < n1) 
-    {
-         result[position] = arr1[i]; 
-         position++; i++;
-    }      
-    
-    while (j < n2) 
-    {
-        result[position] = arr2[j];
-        position++; j++;
-    } 
-
-}
-void *sort_routine(void* Ptr)
-{   
-    int i;
-    parameters *data = Ptr;
-    printf("--------------------------------\n");
-    printf("Thread id is: %d SORT: %d->%d elements\n", data->tid, data->from_index, data->to_index);
-    printf("BEFORE SORT:");
-    for(i=data->from_index; i<=data->to_index; i++)
-    {
-        printf("%d ", list[i]);
-    }
-    printf("\n");
-    quickSort(list, data->from_index, data->to_index);
-    printf("AFTER SORT:");
-    for(i=data->from_index; i<=data->to_index; i++)
-    {
-        printf("%d ", list[i]);
-    }
-    printf("\n");
-    free(Ptr);
-    pthread_exit(NULL);
-    
-
-}
-
-void *merge_routine(void* Ptr)
-{
-    parameters *p = Ptr;
-    printf("--------------------------------\n");
-    printf("Thread id is: %d MERGE ROUTINE \n", p->tid);
-    int i, j, num_samples, num_threads, from_index, to_index;
-    num_threads = p->nt;
-    num_samples = p->ns;
-
-    for(i =0; i<num_threads; i++)
-    {   
-        data = (parameters*)malloc(sizeof(parameters));
-        data->from_index = i*num_samples/num_threads;
-        data->to_index = data->from_index + num_samples/num_threads - 1;
-        /*Consider in the case of i==0, directly copy frist block to result*/
-        if (i==0)
-        {
-            for (j=0; j<=data->to_index; j++)
-            {
-                result[j] = list[j];
-            }
-        }
-        else
-        {
-            merger(data);
-        } 
-    };
-
-    free(Ptr);
-    pthread_exit(NULL);
 }
 
 // Function executed by kernel thread
