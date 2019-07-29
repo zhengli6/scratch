@@ -8,7 +8,7 @@
 #include <unistd.h>
 
 #define MAX_THREADS 11
-int input[500];/*List of integers contained in the file*/
+int input[500] = {2,5,3,1,6,8,7,9,53,23,3,4,7,1,71,66,22,34,51,16,22,11,13,46,24,88,192,222,431,94,29,32,18,72,17,19,122,43,15,33,36,31,30,42,57,61,39,74,12,18,37,7,14,9,29,19,86,69,23,57};/*List of integers contained in the file*/
 int list[500];  /* List of up to 500 non-negative integers with values 0<=x<=1000*/
 int result[500]; /* final sorted list*/
 typedef struct
@@ -181,7 +181,7 @@ void *merge_routine(void* Ptr)
 
 
 /* This function is called when the module is removed. */ 
-void simple_exit(void)
+void main_exit(void)
 {
     printk(KERN_INFO "Removing SORTING Module\n"); 
 }
@@ -191,6 +191,7 @@ int main_init(int argc, char * argv[])
 
     printk(KERN_INFO "Loading SORTING Module\n"); 
     
+    /*
     if(argc != 4) 
     {
         printf("Please Specify [Array Size][Input FileName][Number of Threads] In The Command Line\n");
@@ -200,6 +201,11 @@ int main_init(int argc, char * argv[])
     int num_samples = atoi(argv[1]);
     int num_threads = atoi(argv[3]);
     char *FileName = argv[2];
+    */
+
+    int num_samples = 30;
+    int num_threads = 5;
+    char *FileName = "Hard coded Array";
     int temp;
 
     pthread_t workers[num_threads + 1];
@@ -218,6 +224,8 @@ int main_init(int argc, char * argv[])
         fprintf(stderr, "* Integers(%d) cannot be evenly allocated across threads(%d).\n  Please specify different number of threads!\n", num_samples, num_threads);
         return 1;
     }
+    
+    /*
     FILE *myFile = fopen(FileName, "r");
     if (myFile== NULL)
     {
@@ -236,12 +244,12 @@ int main_init(int argc, char * argv[])
         }
     }
     fclose(myFile);
-    
+    */
     for(i=0; i<num_samples; i++)
     {
         list[i] = input[i];
     }
-
+    
     for(i =0; i<=num_threads-1; i++)
     {   
         data = (parameters*)malloc(sizeof(parameters));
@@ -285,7 +293,7 @@ int main_init(int argc, char * argv[])
 
 /* Macros for registering module entry and exit points. */ 
 module_init(main_init);
-module_exit(simple_exit);
+module_exit(main_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("Simple Sorting Module"); 
