@@ -219,7 +219,11 @@ static int __init init_thread(void)
     {
         list[i] = input[i];
     }
-
+    printk(KERN_INFO "\nINPUT ARRAY:\n");
+    for(i=0; i<num_samples; i++)
+    {
+        printk(KERN_CONT "%d ", input[i]);
+    }
     /* ============================== SORT SECTION ================================*/
 
 
@@ -239,7 +243,7 @@ static int __init init_thread(void)
     };
 
     /* ============================== MERGE SECTION ================================*/
-    i++
+    i++;
     data = (parameters*)vmalloc(sizeof(parameters));
     data->from_index = 0;
     data->to_index = 0;
@@ -252,18 +256,14 @@ static int __init init_thread(void)
         printk(KERN_INFO "Thread#%d Created successfully\n", i);
     else
         printk(KERN_ERR "Thread#%d creation failed\n", i);
-    
+    ssleep(2);
     /* ============================== OUTPUTS DISPLAY ================================*/
-    printk(KERN_INFO "\nINPUT ARRAY:\n");
-    for(i=0; i<num_samples; i++)
-    {
-        printk(KERN_CONT "%d ", input[i]);
-    }
     printk(KERN_INFO "\nFINAL RESULT:\n");
     for(i=0; i<num_samples; i++)
     {
         printk(KERN_CONT "%d ", result[i]);
     }
+
     return 0;
 }
 // Module Exit
