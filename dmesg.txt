@@ -24,1449 +24,505 @@
 [    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
 [    0.000000] Hypervisor detected: KVM
 [    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
-[    0.000000] kvm-clock: cpu 0, msr 11001001, primary cpu clock
-[    0.000000] kvm-clock: using sched offset of 9089752919 cycles
+[    0.000000] kvm-clock: cpu 0, msr 20401001, primary cpu clock
+[    0.000000] kvm-clock: using sched offset of 8462240601 cycles
 [    0.000002] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
 [    0.000004] tsc: Detected 2399.998 MHz processor
-[    0.001958] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
-[    0.001960] e820: remove [mem 0x000a0000-0x000fffff] usable
-[    0.001964] last_pfn = 0x3fff0 max_arch_pfn = 0x400000000
-[    0.001974] MTRR default type: uncachable
-[    0.001975] MTRR variable ranges disabled:
-[    0.001977] Disabled
-[    0.001978] x86/PAT: MTRRs disabled, skipping PAT initialization too.
-[    0.001980] CPU MTRRs all blank - virtualized system.
-[    0.001983] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
-[    0.002063] found SMP MP-table at [mem 0x0009fff0-0x0009ffff]
-[    0.129881] check: Scanning 1 areas for low memory corruption
-[    0.129910] BRK [0x11201000, 0x11201fff] PGTABLE
-[    0.129912] BRK [0x11202000, 0x11202fff] PGTABLE
-[    0.129913] BRK [0x11203000, 0x11203fff] PGTABLE
-[    0.129929] BRK [0x11204000, 0x11204fff] PGTABLE
-[    0.129966] BRK [0x11205000, 0x11205fff] PGTABLE
-[    0.129976] RAMDISK: [mem 0x36e65000-0x37729fff]
-[    0.129984] ACPI: Early table checksum verification disabled
-[    0.130012] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
-[    0.130016] ACPI: XSDT 0x000000003FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
-[    0.130022] ACPI: FACP 0x000000003FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
-[    0.130029] ACPI: DSDT 0x000000003FFF0470 0022EA (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
-[    0.130033] ACPI: FACS 0x000000003FFF0200 000040
-[    0.130037] ACPI: FACS 0x000000003FFF0200 000040
-[    0.130040] ACPI: APIC 0x000000003FFF0240 000054 (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
-[    0.130044] ACPI: SSDT 0x000000003FFF02A0 0001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
-[    0.130054] ACPI: Local APIC address 0xfee00000
-[    0.130268] No NUMA configuration found
-[    0.130269] Faking a node at [mem 0x0000000000000000-0x000000003ffeffff]
-[    0.130272] NODE_DATA(0) allocated [mem 0x3ffec000-0x3ffeffff]
-[    0.130286] Zone ranges:
-[    0.130287]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
-[    0.130288]   DMA32    [mem 0x0000000001000000-0x000000003ffeffff]
-[    0.130289]   Normal   empty
-[    0.130290]   Device   empty
-[    0.130291] Movable zone start for each node
-[    0.130291] Early memory node ranges
-[    0.130292]   node   0: [mem 0x0000000000001000-0x000000000009efff]
-[    0.130293]   node   0: [mem 0x0000000000100000-0x000000003ffeffff]
-[    0.130295] Zeroed struct page in unavailable ranges: 98 pages
-[    0.130295] Initmem setup node 0 [mem 0x0000000000001000-0x000000003ffeffff]
-[    0.130297] On node 0 totalpages: 262030
-[    0.130298]   DMA zone: 64 pages used for memmap
-[    0.130298]   DMA zone: 21 pages reserved
-[    0.130299]   DMA zone: 3998 pages, LIFO batch:0
-[    0.130342]   DMA32 zone: 4032 pages used for memmap
-[    0.130343]   DMA32 zone: 258032 pages, LIFO batch:63
-[    0.133658] ACPI: PM-Timer IO Port: 0x4008
-[    0.133662] ACPI: Local APIC address 0xfee00000
-[    0.133725] IOAPIC[0]: apic_id 1, version 32, address 0xfec00000, GSI 0-23
-[    0.133729] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
-[    0.133731] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
-[    0.133733] ACPI: IRQ0 used by override.
-[    0.133733] ACPI: IRQ9 used by override.
-[    0.133736] Using ACPI (MADT) for SMP configuration information
-[    0.133742] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
-[    0.133762] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
-[    0.133763] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
-[    0.133764] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
-[    0.133764] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
-[    0.133766] [mem 0x40000000-0xfebfffff] available for PCI devices
-[    0.133767] Booting paravirtualized kernel on KVM
-[    0.133770] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370452778343963 ns
-[    0.237095] setup_percpu: NR_CPUS:320 nr_cpumask_bits:320 nr_cpu_ids:1 nr_node_ids:1
-[    0.239174] percpu: Embedded 54 pages/cpu s184320 r8192 d28672 u2097152
-[    0.239181] pcpu-alloc: s184320 r8192 d28672 u2097152 alloc=1*2097152
-[    0.239182] pcpu-alloc: [0] 0 
-[    0.239203] Built 1 zonelists, mobility grouping on.  Total pages: 257913
-[    0.239204] Policy zone: DMA32
-[    0.239206] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=5f45b225-1651-42b7-9f92-623302077947 rw audit=0 loglevel=3 quiet
-[    0.239242] audit: disabled (until reboot)
-[    0.239311] Calgary: detecting Calgary via BIOS EBDA area
-[    0.239312] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
-[    0.241800] Memory: 993564K/1048120K available (12291K kernel code, 1320K rwdata, 3900K rodata, 1608K init, 3616K bss, 54556K reserved, 0K cma-reserved)
-[    0.243694] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
-[    0.243705] Kernel/User page tables isolation: enabled
-[    0.243718] ftrace: allocating 37375 entries in 146 pages
-[    0.258538] rcu: Preemptible hierarchical RCU implementation.
-[    0.258540] rcu: 	CONFIG_RCU_FANOUT set to non-default value of 32.
-[    0.258540] rcu: 	RCU dyntick-idle grace-period acceleration is enabled.
-[    0.258542] rcu: 	RCU restricting CPUs from NR_CPUS=320 to nr_cpu_ids=1.
-[    0.258542] rcu: 	RCU priority boosting: priority 1 delay 500 ms.
-[    0.258543] 	Tasks RCU enabled.
-[    0.258544] rcu: RCU calculated value of scheduler-enlistment delay is 30 jiffies.
-[    0.258545] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
-[    0.260074] NR_IRQS: 20736, nr_irqs: 256, preallocated irqs: 16
-[    0.260216] rcu: 	Offload RCU callbacks from CPUs: (none).
-[    0.260305] random: get_random_bytes called from start_kernel+0x37e/0x559 with crng_init=0
-[    0.260326] Console: colour dummy device 80x25
-[    0.260329] printk: console [tty0] enabled
-[    0.260347] ACPI: Core revision 20190509
-[    0.260449] APIC: Switch to symmetric I/O mode setup
-[    0.260687] x2apic enabled
-[    0.260913] Switched APIC routing to physical x2apic.
-[    0.262007] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
-[    0.262030] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x229835b7123, max_idle_ns: 440795242976 ns
-[    0.262035] Calibrating delay loop (skipped) preset value.. 4801.99 BogoMIPS (lpj=7999993)
-[    0.262037] pid_max: default: 32768 minimum: 301
-[    0.262066] LSM: Security Framework initializing
-[    0.262069] Yama: becoming mindful.
-[    0.265401] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
-[    0.265467] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
-[    0.265476] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
-[    0.265479] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes)
-[    0.265600] *** VALIDATE proc ***
-[    0.265640] *** VALIDATE cgroup1 ***
-[    0.265641] *** VALIDATE cgroup2 ***
-[    0.265751] process: using mwait in idle threads
-[    0.265756] Last level iTLB entries: 4KB 1024, 2MB 1024, 4MB 1024
-[    0.265756] Last level dTLB entries: 4KB 1024, 2MB 1024, 4MB 1024, 1GB 4
-[    0.265758] Spectre V2 : Mitigation: Full generic retpoline
-[    0.265758] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
-[    0.265759] Speculative Store Bypass: Vulnerable
-[    0.265762] MDS: Vulnerable: Clear CPU buffers attempted, no microcode
-[    0.270939] Freeing SMP alternatives memory: 32K
-[    0.272031] APIC calibration not consistent with PM-Timer: 98ms instead of 100ms
-[    0.272031] APIC delta adjusted to PM-Timer: 6249960 (6172367)
-[    0.272031] smpboot: CPU0: Intel(R) Core(TM) i5-4258U CPU @ 2.40GHz (family: 0x6, model: 0x45, stepping: 0x1)
-[    0.288719] Performance Events: unsupported p6 CPU model 69 no PMU driver, software events only.
-[    0.295383] rcu: Hierarchical SRCU implementation.
-[    0.315423] NMI watchdog: Perf NMI watchdog permanently disabled
-[    0.325382] smp: Bringing up secondary CPUs ...
-[    0.325386] smp: Brought up 1 node, 1 CPU
-[    0.325388] smpboot: Max logical packages: 1
-[    0.325390] smpboot: Total of 1 processors activated (4801.99 BogoMIPS)
-[    0.325621] devtmpfs: initialized
-[    0.325702] x86/mm: Memory block size: 128MB
-[    0.328860] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370867519511994 ns
-[    0.328865] futex hash table entries: 256 (order: 2, 16384 bytes)
-[    0.328916] pinctrl core: initialized pinctrl subsystem
-[    0.329019] PM: RTC time: 19:27:38, date: 2019-07-29
-[    0.329128] NET: Registered protocol family 16
-[    0.329302] cpuidle: using governor ladder
-[    0.329306] cpuidle: using governor menu
-[    0.329346] ACPI: bus type PCI registered
-[    0.329348] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
-[    0.329474] PCI: Using configuration type 1 for base access
-[    0.335513] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
-[    0.352231] ACPI: Added _OSI(Module Device)
-[    0.352233] ACPI: Added _OSI(Processor Device)
-[    0.352234] ACPI: Added _OSI(3.0 _SCP Extensions)
-[    0.352235] ACPI: Added _OSI(Processor Aggregator Device)
-[    0.352237] ACPI: Added _OSI(Linux-Dell-Video)
-[    0.352238] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
-[    0.352239] ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
-[    0.356229] ACPI: 2 ACPI AML tables successfully acquired and loaded
-[    0.358152] ACPI: Interpreter enabled
-[    0.358164] ACPI: (supports S0 S5)
-[    0.358166] ACPI: Using IOAPIC for interrupt routing
-[    0.358414] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
-[    0.358555] ACPI: Enabled 2 GPEs in block 00 to 07
-[    0.364544] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
-[    0.364550] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI HPX-Type3]
-[    0.365024] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
-[    0.365032] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
-[    0.365459] PCI host bridge to bus 0000:00
-[    0.365462] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
-[    0.365463] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
-[    0.365464] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
-[    0.365465] pci_bus 0000:00: root bus resource [mem 0x40000000-0xfdffffff window]
-[    0.365467] pci_bus 0000:00: root bus resource [bus 00-ff]
-[    0.365514] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
-[    0.366627] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
-[    0.367532] pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a
-[    0.368118] pci 0000:00:01.1: reg 0x20: [io  0xd000-0xd00f]
-[    0.368339] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
-[    0.368340] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
-[    0.368341] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
-[    0.368342] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
-[    0.368737] pci 0000:00:02.0: [15ad:0405] type 00 class 0x030000
-[    0.369706] pci 0000:00:02.0: reg 0x10: [io  0xd010-0xd01f]
-[    0.370637] pci 0000:00:02.0: reg 0x14: [mem 0xf0000000-0xf0ffffff]
-[    0.372359] pci 0000:00:02.0: reg 0x18: [mem 0xf1000000-0xf11fffff]
-[    0.376566] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
-[    0.377467] pci 0000:00:03.0: reg 0x10: [mem 0xf1200000-0xf121ffff]
-[    0.378841] pci 0000:00:03.0: reg 0x18: [io  0xd020-0xd027]
-[    0.382163] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000
-[    0.382876] pci 0000:00:04.0: reg 0x10: [io  0xd040-0xd05f]
-[    0.383500] pci 0000:00:04.0: reg 0x14: [mem 0xf1400000-0xf17fffff]
-[    0.384075] pci 0000:00:04.0: reg 0x18: [mem 0xf1800000-0xf1803fff pref]
-[    0.386748] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100
-[    0.386910] pci 0000:00:05.0: reg 0x10: [io  0xd100-0xd1ff]
-[    0.386998] pci 0000:00:05.0: reg 0x14: [io  0xd200-0xd23f]
-[    0.388438] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000
-[    0.389202] pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
-[    0.389216] pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
-[    0.391344] pci 0000:00:0c.0: [8086:1e31] type 00 class 0x0c0330
-[    0.392134] pci 0000:00:0c.0: reg 0x10: [mem 0xf1810000-0xf181ffff]
-[    0.396481] pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601
-[    0.397718] pci 0000:00:0d.0: reg 0x10: [io  0xd240-0xd247]
-[    0.398873] pci 0000:00:0d.0: reg 0x14: [io  0xd248-0xd24b]
-[    0.399517] pci 0000:00:0d.0: reg 0x18: [io  0xd250-0xd257]
-[    0.400156] pci 0000:00:0d.0: reg 0x1c: [io  0xd258-0xd25b]
-[    0.400770] pci 0000:00:0d.0: reg 0x20: [io  0xd260-0xd26f]
-[    0.401373] pci 0000:00:0d.0: reg 0x24: [mem 0xf1820000-0xf1821fff]
-[    0.411854] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
-[    0.412148] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 *10 11)
-[    0.412272] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 *9 10 11)
-[    0.412393] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 9 10 *11)
-[    0.412761] pci 0000:00:02.0: vgaarb: setting as boot VGA device
-[    0.412763] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
-[    0.412766] pci 0000:00:02.0: vgaarb: bridge control possible
-[    0.412767] vgaarb: loaded
-[    0.412929] ACPI: bus type USB registered
-[    0.412941] usbcore: registered new interface driver usbfs
-[    0.412946] usbcore: registered new interface driver hub
-[    0.412957] usbcore: registered new device driver usb
-[    0.412979] pps_core: LinuxPPS API ver. 1 registered
-[    0.412980] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
-[    0.412982] PTP clock support registered
-[    0.412990] EDAC MC: Ver: 3.0.0
-[    0.418765] PCI: Using ACPI for IRQ routing
-[    0.418768] PCI: pci_cache_line_size set to 64 bytes
-[    0.419025] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
-[    0.419029] e820: reserve RAM buffer [mem 0x3fff0000-0x3fffffff]
-[    0.419166] NetLabel: Initializing
-[    0.419167] NetLabel:  domain hash size = 128
-[    0.419167] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
-[    0.419186] NetLabel:  unlabeled traffic allowed by default
-[    0.419335] clocksource: Switched to clocksource kvm-clock
-[    0.434668] VFS: Disk quotas dquot_6.6.0
-[    0.434681] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
-[    0.434703] *** VALIDATE hugetlbfs ***
-[    0.434746] pnp: PnP ACPI init
-[    0.434823] pnp 00:00: Plug and Play ACPI device, IDs PNP0303 (active)
-[    0.434915] pnp 00:01: Plug and Play ACPI device, IDs PNP0f03 (active)
-[    0.436026] pnp: PnP ACPI: found 2 devices
-[    0.441610] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
-[    0.441620] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
-[    0.441621] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
-[    0.441622] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
-[    0.441623] pci_bus 0000:00: resource 7 [mem 0x40000000-0xfdffffff window]
-[    0.441673] NET: Registered protocol family 2
-[    0.441799] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes)
-[    0.441805] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
-[    0.441821] TCP bind hash table entries: 8192 (order: 5, 131072 bytes)
-[    0.441838] TCP: Hash tables configured (established 8192 bind 8192)
-[    0.443568] UDP hash table entries: 512 (order: 2, 16384 bytes)
-[    0.443573] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
-[    0.443620] NET: Registered protocol family 1
-[    0.443630] NET: Registered protocol family 44
-[    0.443658] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
-[    0.443671] pci 0000:00:01.0: Activating ISA DMA hang workarounds
-[    0.443729] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
-[    0.444882] PCI: CLS 0 bytes, default 64
-[    0.444919] Trying to unpack rootfs image as initramfs...
-[    0.599014] Freeing initrd memory: 8980K
-[    0.599014] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x229835b7123, max_idle_ns: 440795242976 ns
-[    0.599014] clocksource: Switched to clocksource tsc
-[    0.599014] platform rtc_cmos: registered platform RTC device (no PNP device found)
-[    0.599014] check: Scanning for low memory corruption every 60 seconds
-[    0.599014] Initialise system trusted keyrings
-[    0.599014] Key type blacklist registered
-[    0.599014] workingset: timestamp_bits=41 max_order=18 bucket_order=0
-[    0.603786] zbud: loaded
-[    0.609326] Key type asymmetric registered
-[    0.609327] Asymmetric key parser 'x509' registered
-[    0.609341] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
-[    0.612907] io scheduler mq-deadline registered
-[    0.612909] io scheduler kyber registered
-[    0.612980] io scheduler bfq registered
-[    0.613114] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
-[    0.613192] vesafb: mode is 640x480x32, linelength=2560, pages=0
-[    0.613193] vesafb: scrolling: redraw
-[    0.613194] vesafb: Truecolor: size=8:8:8:8, shift=24:16:8:0
-[    0.613207] vesafb: framebuffer at 0xf0000000, mapped to 0x0000000032905915, using 1216k, total 1216k
-[    0.613252] fbcon: Deferring console take-over
-[    0.613253] fb0: VESA VGA frame buffer device
-[    0.613312] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
-[    0.613327] ACPI: Power Button [PWRF]
-[    0.613419] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
-[    0.613427] ACPI: Sleep Button [SLPF]
-[    0.613548] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
-[    0.613610] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input2
-[    0.618206] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
-[    0.629800] usbcore: registered new interface driver usbserial_generic
-[    0.629805] usbserial: USB Serial support registered for generic
-[    0.630100] rtc_cmos rtc_cmos: registered as rtc0
-[    0.630115] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
-[    0.630186] intel_pstate: CPU model not supported
-[    0.630199] ledtrig-cpu: registered to indicate activity on CPUs
-[    0.630369] NET: Registered protocol family 10
-[    0.640310] Segment Routing with IPv6
-[    0.640334] NET: Registered protocol family 17
-[    0.644401] mce: Using 0 MCE banks
-[    0.644420] RAS: Correctable Errors collector initialized.
-[    0.644431] sched_clock: Marking stable (642507632, 1768078)->(750298755, -106023045)
-[    0.644554] registered taskstats version 1
-[    0.644562] Loading compiled-in X.509 certificates
-[    0.648673] Loaded X.509 cert 'Build time autogenerated kernel key: bb0b08f71b47c77ca176d0e75f4f200e5d3ef8d8'
-[    0.648693] zswap: loaded using pool lzo/zbud
-[    0.657508] Key type big_key registered
-[    0.657903] PM:   Magic number: 11:129:497
-[    0.657973] rtc_cmos rtc_cmos: setting system clock to 2019-07-29T19:27:38 UTC (1564428458)
-[    0.663770] Freeing unused decrypted memory: 2040K
-[    0.664033] Freeing unused kernel image memory: 1608K
-[    0.664106] Write protecting the kernel read-only data: 18432k
-[    0.664578] Freeing unused kernel image memory: 2012K
-[    0.664651] Freeing unused kernel image memory: 196K
-[    0.674554] x86/mm: Checked W+X mappings: passed, no W+X pages found.
-[    0.674556] x86/mm: Checking user space page tables
-[    0.684771] x86/mm: Checked W+X mappings: passed, no W+X pages found.
-[    0.684773] Run /init as init process
-[    0.701308] fbcon: Taking over console
-[    0.701374] Console: switching to colour frame buffer device 80x30
-[    0.781543] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
-[    0.782071] serio: i8042 KBD port at 0x60,0x64 irq 1
-[    0.782074] serio: i8042 AUX port at 0x60,0x64 irq 12
-[    0.798022] SCSI subsystem initialized
-[    0.824298] xhci_hcd 0000:00:0c.0: xHCI Host Controller
-[    0.824307] xhci_hcd 0000:00:0c.0: new USB bus registered, assigned bus number 1
-[    0.825784] xhci_hcd 0000:00:0c.0: hcc params 0x04000000 hci version 0x100 quirks 0x000000000000b930
-[    0.833179] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.02
-[    0.833181] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
-[    0.833183] usb usb1: Product: xHCI Host Controller
-[    0.833184] usb usb1: Manufacturer: Linux 5.2.3-arch1-1-ARCH xhci-hcd
-[    0.833185] usb usb1: SerialNumber: 0000:00:0c.0
-[    0.834578] hub 1-0:1.0: USB hub found
-[    0.834796] hub 1-0:1.0: 8 ports detected
-[    0.836241] xhci_hcd 0000:00:0c.0: xHCI Host Controller
-[    0.836245] xhci_hcd 0000:00:0c.0: new USB bus registered, assigned bus number 2
-[    0.836248] xhci_hcd 0000:00:0c.0: Host supports USB 3.0 SuperSpeed
-[    0.838959] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3
-[    0.840157] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.02
-[    0.840159] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
-[    0.840160] usb usb2: Product: xHCI Host Controller
-[    0.840161] usb usb2: Manufacturer: Linux 5.2.3-arch1-1-ARCH xhci-hcd
-[    0.840162] usb usb2: SerialNumber: 0000:00:0c.0
-[    0.840500] hub 2-0:1.0: USB hub found
-[    0.840526] hub 2-0:1.0: 6 ports detected
-[    0.847033] libata version 3.00 loaded.
-[    0.848170] ata_piix 0000:00:01.1: version 2.13
-[    0.852008] ahci 0000:00:0d.0: version 3.0
-[    0.852647] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
-[    0.852780] ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
-[    0.852782] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
-[    0.853112] scsi host0: ata_piix
-[    0.857334] scsi host2: ata_piix
-[    0.857411] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
-[    0.857412] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
-[    0.857750] scsi host1: ahci
-[    0.857899] ata3: SATA max UDMA/133 abar m8192@0xf1820000 port 0xf1820100 irq 21
-[    1.019945] ata2.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
-[    1.020732] scsi 2:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
-[    1.165866] usb 1-1: new full-speed USB device number 2 using xhci_hcd
-[    1.177040] ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
-[    1.177196] ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
-[    1.177197] ata3.00: 16777216 sectors, multi 128: LBA48 NCQ (depth 32)
-[    1.177431] ata3.00: configured for UDMA/133
-[    1.177557] scsi 1:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
-[    1.186929] sd 1:0:0:0: [sda] 16777216 512-byte logical blocks: (8.59 GB/8.00 GiB)
-[    1.186936] sd 1:0:0:0: [sda] Write Protect is off
-[    1.186937] sd 1:0:0:0: [sda] Mode Sense: 00 3a 00 00
-[    1.186947] sd 1:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
-[    1.189763] sr 2:0:0:0: [sr0] scsi3-mmc drive: 32x/32x xa/form2 tray
-[    1.189765] cdrom: Uniform CD-ROM driver Revision: 3.20
-[    1.190343] sr 2:0:0:0: Attached scsi CD-ROM sr0
-[    1.192640]  sda: sda1 sda2 sda3
-[    1.192873] sd 1:0:0:0: [sda] Attached SCSI disk
-[    1.270120] random: fast init done
-[    1.307356] usb 1-1: New USB device found, idVendor=80ee, idProduct=0021, bcdDevice= 1.00
-[    1.307359] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
-[    1.307360] usb 1-1: Product: USB Tablet
-[    1.307361] usb 1-1: Manufacturer: VirtualBox
-[    1.312861] hidraw: raw HID events driver (C) Jiri Kosina
-[    1.318961] usbcore: registered new interface driver usbhid
-[    1.318962] usbhid: USB HID core driver
-[    1.320555] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:0c.0/usb1/1-1/1-1:1.0/0003:80EE:0021.0001/input/input5
-[    1.325851] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:0c.0-1/input0
-[    1.348912] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
-[    1.605104] systemd[1]: systemd 242.84-1-arch running in system mode. (+PAM +AUDIT -SELINUX -IMA -APPARMOR +SMACK -SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=hybrid)
-[    1.605139] systemd[1]: Detected virtualization oracle.
-[    1.605143] systemd[1]: Detected architecture x86-64.
-[    1.606967] systemd[1]: Set hostname to <os>.
-[    1.834043] systemd[1]: Listening on Journal Socket.
-[    1.835196] systemd[1]: Mounting POSIX Message Queue File System...
-[    1.835234] systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
-[    1.835349] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
-[    1.836131] systemd[1]: Mounting Huge Pages File System...
-[    1.836843] systemd[1]: Starting Create list of required static device nodes for the current kernel...
-[    1.870149] EXT4-fs (sda1): re-mounted. Opts: (null)
-[    1.903551] random: lvm: uninitialized urandom read (4 bytes read)
-[    1.963606] random: systemd-random-: uninitialized urandom read (512 bytes read)
-[    2.507025] systemd-journald[234]: Received request to flush runtime journal from PID 1
-[    2.514219] systemd-journald[234]: File /var/log/journal/277c3cd549fd4980add29953e6a1fb38/system.journal corrupted or uncleanly shut down, renaming and replacing.
-[    2.625669] vboxguest: host-version: 6.0.8r130520 0x8000000f
-[    2.627668] piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
-[    2.658477] ACPI: AC Adapter [AC] (on-line)
-[    2.670144] Linux agpgart interface v0.103
-[    2.679469] vbg_heartbeat_init: Setting up heartbeat to trigger every 2000 milliseconds
-[    2.679607] input: VirtualBox mouse integration as /devices/pci0000:00/0000:00:04.0/input/input6
-[    2.694091] vboxguest: misc device minor 56, IRQ 20, I/O port d040, MMIO at 0x00000000f1400000 (size 0x0000000000400000)
-[    2.718303] battery: ACPI: Battery Slot [BAT0] (battery present)
-[    2.748392] input: PC Speaker as /devices/platform/pcspkr/input/input7
-[    2.782201] mousedev: PS/2 mouse device common for all mice
-[    2.782455] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
-[    2.782459] e1000: Copyright (c) 1999-2006 Intel Corporation.
-[    2.825726] RAPL PMU: API unit is 2^-32 Joules, 4 fixed counters, 10737418240 ms ovfl timer
-[    2.825727] RAPL PMU: hw unit of domain pp0-core 2^-0 Joules
-[    2.825728] RAPL PMU: hw unit of domain package 2^-0 Joules
-[    2.825729] RAPL PMU: hw unit of domain dram 2^-0 Joules
-[    2.825729] RAPL PMU: hw unit of domain pp1-gpu 2^-0 Joules
-[    2.931216] Adding 2097148k swap on /dev/sda2.  Priority:-2 extents:1 across:2097148k FS
-[    2.980930] cryptd: max_cpu_qlen set to 1000
-[    3.100425] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input8
-[    3.139936] EXT4-fs (sda3): mounted filesystem with ordered data mode. Opts: (null)
-[    3.193516] AVX2 version of gcm_enc/dec engaged.
-[    3.193518] AES CTR mode by8 optimization enabled
-[    3.239979] random: dbus-daemon: uninitialized urandom read (12 bytes read)
-[    3.265164] random: dbus-daemon: uninitialized urandom read (12 bytes read)
-[    3.291200] 8021q: 802.1Q VLAN Support v1.8
-[    3.480791] cfg80211: Loading compiled-in X.509 certificates for regulatory database
-[    3.500366] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
-[    3.504145] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
-[    3.504150] cfg80211: failed to load regulatory.db
-[    3.569174] snd_intel8x0 0000:00:05.0: white list rate for 1028:0177 is 48000
-[    3.647476] [drm] DMA map mode: Caching DMA mappings.
-[    3.647534] [drm] Capabilities:
-[    3.647534] [drm]   Cursor.
-[    3.647535] [drm]   Cursor bypass 2.
-[    3.647535] [drm]   Alpha cursor.
-[    3.647536] [drm]   3D.
-[    3.647536] [drm]   Extended Fifo.
-[    3.647537] [drm]   Pitchlock.
-[    3.647537] [drm]   Irq mask.
-[    3.647538] [drm]   GMR.
-[    3.647538] [drm]   Traces.
-[    3.647538] [drm]   GMR2.
-[    3.647539] [drm]   Screen Object 2.
-[    3.647540] [drm] Max GMR ids is 8192
-[    3.647541] [drm] Max number of GMR pages is 1048576
-[    3.647542] [drm] Max dedicated hypervisor surface memory is 507904 kiB
-[    3.647542] [drm] Maximum display memory size is 16384 kiB
-[    3.647543] [drm] VRAM at 0xf0000000 size is 16384 kiB
-[    3.647544] [drm] MMIO at 0xf1000000 size is 2048 kiB
-[    3.647563] vmwgfx 0000:00:02.0: BAR 1: can't reserve [mem 0xf0000000-0xf0ffffff]
-[    3.647564] [drm] It appears like vesafb is loaded. Ignore above error if any.
-[    3.662581] [TTM] Zone  kernel: Available graphics memory: 504216 KiB
-[    3.662583] [TTM] Initializing pool allocator
-[    3.662586] [TTM] Initializing DMA pool allocator
-[    3.662607] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
-[    3.662608] [drm] No driver support for vblank timestamp query.
-[    3.662820] [drm] Screen Objects Display Unit initialized
-[    3.662867] [drm] width 640
-[    3.662878] [drm] height 480
-[    3.662888] [drm] bpp 32
-[    3.663379] [drm] Fifo max 0x00200000 min 0x00001000 cap 0x00000355
-[    3.663389] [drm] DX: no.
-[    3.663390] [drm] Atomic: yes.
-[    3.663390] [drm] SM4_1: no.
-[    3.663409] [drm:vmw_host_log [vmwgfx]] *ERROR* Failed to send host log message.
-[    3.663421] [drm:vmw_host_log [vmwgfx]] *ERROR* Failed to send host log message.
-[    3.702164] checking generic (f0000000 130000) vs hw (f0000000 1000000)
-[    3.702166] fb0: switching to svgadrmfb from VESA VGA
-[    3.702187] Console: switching to colour dummy device 80x25
-[    3.702817] fbcon: svgadrmfb (fb0) is primary device
-[    3.704488] Console: switching to colour frame buffer device 100x37
-[    3.716808] [drm] Initialized vmwgfx 2.15.0 20180704 for 0000:00:02.0 on minor 0
-[    4.105918] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:97:d4:ac
-[    4.105923] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
-[    4.109946] e1000 0000:00:03.0 enp0s3: renamed from eth0
-[    4.155208] 8021q: adding VLAN 0 to HW filter on device enp0s3
-[    5.159107] random: crng init done
-[    6.289492] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
-[    6.289831] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s3: link becomes ready
-[   49.450177] sort_kernel: loading out-of-tree module taints kernel.
-[   49.450215] sort_kernel: module verification failed: signature and/or required key missing - tainting kernel
-[   49.451815] Creating Thread
-[   49.451847] Thread Created successfully
-[   49.452142] Thread Running
-[   51.515674] Thread Stopping
-[   63.146430] Cleaning Up
-[  477.298104] sort_kernel: unknown parameter 'log' ignored
-[  477.300195] Creating Thread
-[  477.300300] Thread Created successfully
-[  477.300623] Thread Running
-[  479.461668] Thread Stopping
-[  496.200256] Cleaning Up
-[ 1940.954252] Creating Thread
-[ 1940.954281] Thread Created successfully
-[ 1940.954560] Thread Running
-[ 1943.140233] Thread Stopping
-[ 1947.634387] Cleaning Up
-[ 2682.171591] Total number of Threads: 5
-[ 2682.171592] Creating Thread
-[ 2682.171624] Thread Created successfully
-[ 2682.171922] Thread Running
-[ 2684.259862] Thread Stopping
-[ 3287.471453] Cleaning Up
-[ 3289.616885]  ================================================
-[ 3289.616887] |                                               |
-[ 3289.616888] | Array Size:		12                      |
-[ 3289.616889] | Input File:		Hard coded Array        |
-[ 3289.616890] | Number of Threads:	2                       |
-[ 3289.616890] |                                               |
-[ 3289.616891]  ================================================
+[    0.001882] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.001884] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.001887] last_pfn = 0x3fff0 max_arch_pfn = 0x400000000
+[    0.001897] MTRR default type: uncachable
+[    0.001898] MTRR variable ranges disabled:
+[    0.001901] Disabled
+[    0.001902] x86/PAT: MTRRs disabled, skipping PAT initialization too.
+[    0.001904] CPU MTRRs all blank - virtualized system.
+[    0.001907] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
+[    0.001986] found SMP MP-table at [mem 0x0009fff0-0x0009ffff]
+[    0.128774] check: Scanning 1 areas for low memory corruption
+[    0.128802] BRK [0x20601000, 0x20601fff] PGTABLE
+[    0.128804] BRK [0x20602000, 0x20602fff] PGTABLE
+[    0.128805] BRK [0x20603000, 0x20603fff] PGTABLE
+[    0.128823] BRK [0x20604000, 0x20604fff] PGTABLE
+[    0.128871] BRK [0x20605000, 0x20605fff] PGTABLE
+[    0.128883] RAMDISK: [mem 0x36e65000-0x37729fff]
+[    0.128892] ACPI: Early table checksum verification disabled
+[    0.128920] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+[    0.128924] ACPI: XSDT 0x000000003FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+[    0.128930] ACPI: FACP 0x000000003FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+[    0.128937] ACPI: DSDT 0x000000003FFF0470 0022EA (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+[    0.128941] ACPI: FACS 0x000000003FFF0200 000040
+[    0.128944] ACPI: FACS 0x000000003FFF0200 000040
+[    0.128947] ACPI: APIC 0x000000003FFF0240 000054 (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+[    0.128951] ACPI: SSDT 0x000000003FFF02A0 0001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+[    0.128961] ACPI: Local APIC address 0xfee00000
+[    0.129176] No NUMA configuration found
+[    0.129177] Faking a node at [mem 0x0000000000000000-0x000000003ffeffff]
+[    0.129180] NODE_DATA(0) allocated [mem 0x3ffec000-0x3ffeffff]
+[    0.129194] Zone ranges:
+[    0.129195]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.129196]   DMA32    [mem 0x0000000001000000-0x000000003ffeffff]
+[    0.129197]   Normal   empty
+[    0.129198]   Device   empty
+[    0.129199] Movable zone start for each node
+[    0.129199] Early memory node ranges
+[    0.129200]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.129200]   node   0: [mem 0x0000000000100000-0x000000003ffeffff]
+[    0.129202] Zeroed struct page in unavailable ranges: 98 pages
+[    0.129203] Initmem setup node 0 [mem 0x0000000000001000-0x000000003ffeffff]
+[    0.129205] On node 0 totalpages: 262030
+[    0.129206]   DMA zone: 64 pages used for memmap
+[    0.129206]   DMA zone: 21 pages reserved
+[    0.129207]   DMA zone: 3998 pages, LIFO batch:0
+[    0.129251]   DMA32 zone: 4032 pages used for memmap
+[    0.129252]   DMA32 zone: 258032 pages, LIFO batch:63
+[    0.132509] ACPI: PM-Timer IO Port: 0x4008
+[    0.132513] ACPI: Local APIC address 0xfee00000
+[    0.132577] IOAPIC[0]: apic_id 1, version 32, address 0xfec00000, GSI 0-23
+[    0.132581] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.132582] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[    0.132584] ACPI: IRQ0 used by override.
+[    0.132585] ACPI: IRQ9 used by override.
+[    0.132587] Using ACPI (MADT) for SMP configuration information
+[    0.132594] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.132615] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.132616] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.132617] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.132617] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.132619] [mem 0x40000000-0xfebfffff] available for PCI devices
+[    0.132620] Booting paravirtualized kernel on KVM
+[    0.132622] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370452778343963 ns
+[    0.229922] setup_percpu: NR_CPUS:320 nr_cpumask_bits:320 nr_cpu_ids:1 nr_node_ids:1
+[    0.232008] percpu: Embedded 54 pages/cpu s184320 r8192 d28672 u2097152
+[    0.232015] pcpu-alloc: s184320 r8192 d28672 u2097152 alloc=1*2097152
+[    0.232016] pcpu-alloc: [0] 0 
+[    0.232040] Built 1 zonelists, mobility grouping on.  Total pages: 257913
+[    0.232041] Policy zone: DMA32
+[    0.232043] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=5f45b225-1651-42b7-9f92-623302077947 rw audit=0 loglevel=3 quiet
+[    0.232084] audit: disabled (until reboot)
+[    0.232164] Calgary: detecting Calgary via BIOS EBDA area
+[    0.232165] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+[    0.234925] Memory: 993564K/1048120K available (12291K kernel code, 1320K rwdata, 3900K rodata, 1608K init, 3616K bss, 54556K reserved, 0K cma-reserved)
+[    0.236858] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.236869] Kernel/User page tables isolation: enabled
+[    0.236883] ftrace: allocating 37375 entries in 146 pages
+[    0.251031] rcu: Preemptible hierarchical RCU implementation.
+[    0.251032] rcu: 	CONFIG_RCU_FANOUT set to non-default value of 32.
+[    0.251033] rcu: 	RCU dyntick-idle grace-period acceleration is enabled.
+[    0.251033] rcu: 	RCU restricting CPUs from NR_CPUS=320 to nr_cpu_ids=1.
+[    0.251034] rcu: 	RCU priority boosting: priority 1 delay 500 ms.
+[    0.251035] 	Tasks RCU enabled.
+[    0.251036] rcu: RCU calculated value of scheduler-enlistment delay is 30 jiffies.
+[    0.251036] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.252521] NR_IRQS: 20736, nr_irqs: 256, preallocated irqs: 16
+[    0.252661] rcu: 	Offload RCU callbacks from CPUs: (none).
+[    0.252749] random: get_random_bytes called from start_kernel+0x37e/0x559 with crng_init=0
+[    0.252770] Console: colour dummy device 80x25
+[    0.252774] printk: console [tty0] enabled
+[    0.252790] ACPI: Core revision 20190509
+[    0.252887] APIC: Switch to symmetric I/O mode setup
+[    0.253124] x2apic enabled
+[    0.253347] Switched APIC routing to physical x2apic.
+[    0.254426] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.254448] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x229835b7123, max_idle_ns: 440795242976 ns
+[    0.254452] Calibrating delay loop (skipped) preset value.. 4801.99 BogoMIPS (lpj=7999993)
+[    0.254454] pid_max: default: 32768 minimum: 301
+[    0.254481] LSM: Security Framework initializing
+[    0.254484] Yama: becoming mindful.
+[    0.256213] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+[    0.256290] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.256301] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.256304] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.256430] *** VALIDATE proc ***
+[    0.256470] *** VALIDATE cgroup1 ***
+[    0.256471] *** VALIDATE cgroup2 ***
+[    0.256585] process: using mwait in idle threads
+[    0.256590] Last level iTLB entries: 4KB 1024, 2MB 1024, 4MB 1024
+[    0.256590] Last level dTLB entries: 4KB 1024, 2MB 1024, 4MB 1024, 1GB 4
+[    0.256592] Spectre V2 : Mitigation: Full generic retpoline
+[    0.256592] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.256593] Speculative Store Bypass: Vulnerable
+[    0.256597] MDS: Vulnerable: Clear CPU buffers attempted, no microcode
+[    0.262730] Freeing SMP alternatives memory: 32K
+[    0.264449] smpboot: CPU0: Intel(R) Core(TM) i5-4258U CPU @ 2.40GHz (family: 0x6, model: 0x45, stepping: 0x1)
+[    0.281136] Performance Events: unsupported p6 CPU model 69 no PMU driver, software events only.
+[    0.287805] rcu: Hierarchical SRCU implementation.
+[    0.307820] NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.317800] smp: Bringing up secondary CPUs ...
+[    0.317804] smp: Brought up 1 node, 1 CPU
+[    0.317806] smpboot: Max logical packages: 1
+[    0.317808] smpboot: Total of 1 processors activated (4801.99 BogoMIPS)
+[    0.318040] devtmpfs: initialized
+[    0.318123] x86/mm: Memory block size: 128MB
+[    0.321281] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370867519511994 ns
+[    0.321287] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.321337] pinctrl core: initialized pinctrl subsystem
+[    0.321442] PM: RTC time: 01:55:36, date: 2019-07-30
+[    0.321551] NET: Registered protocol family 16
+[    0.321723] cpuidle: using governor ladder
+[    0.321727] cpuidle: using governor menu
+[    0.321768] ACPI: bus type PCI registered
+[    0.321770] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.321894] PCI: Using configuration type 1 for base access
+[    0.324527] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.338126] ACPI: Added _OSI(Module Device)
+[    0.338128] ACPI: Added _OSI(Processor Device)
+[    0.338129] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.338130] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.338132] ACPI: Added _OSI(Linux-Dell-Video)
+[    0.338133] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+[    0.338134] ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+[    0.341803] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[    0.343668] ACPI: Interpreter enabled
+[    0.343679] ACPI: (supports S0 S5)
+[    0.343680] ACPI: Using IOAPIC for interrupt routing
+[    0.344519] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.344663] ACPI: Enabled 2 GPEs in block 00 to 07
+[    0.350131] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.350136] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI HPX-Type3]
+[    0.350617] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    0.350626] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    0.351022] PCI host bridge to bus 0000:00
+[    0.351024] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.351025] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.351027] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.351028] pci_bus 0000:00: root bus resource [mem 0x40000000-0xfdffffff window]
+[    0.351029] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.351078] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[    0.352068] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[    0.352840] pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a
+[    0.353344] pci 0000:00:01.1: reg 0x20: [io  0xd000-0xd00f]
+[    0.353546] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[    0.353547] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[    0.353547] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[    0.353548] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[    0.354097] pci 0000:00:02.0: [15ad:0405] type 00 class 0x030000
+[    0.354804] pci 0000:00:02.0: reg 0x10: [io  0xd010-0xd01f]
+[    0.355637] pci 0000:00:02.0: reg 0x14: [mem 0xf0000000-0xf0ffffff]
+[    0.356459] pci 0000:00:02.0: reg 0x18: [mem 0xf1000000-0xf11fffff]
+[    0.361231] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+[    0.361988] pci 0000:00:03.0: reg 0x10: [mem 0xf1200000-0xf121ffff]
+[    0.363672] pci 0000:00:03.0: reg 0x18: [io  0xd020-0xd027]
+[    0.367844] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000
+[    0.368613] pci 0000:00:04.0: reg 0x10: [io  0xd040-0xd05f]
+[    0.369258] pci 0000:00:04.0: reg 0x14: [mem 0xf1400000-0xf17fffff]
+[    0.369897] pci 0000:00:04.0: reg 0x18: [mem 0xf1800000-0xf1803fff pref]
+[    0.372819] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100
+[    0.373019] pci 0000:00:05.0: reg 0x10: [io  0xd100-0xd1ff]
+[    0.373129] pci 0000:00:05.0: reg 0x14: [io  0xd200-0xd23f]
+[    0.374676] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000
+[    0.375314] pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+[    0.375327] pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+[    0.377910] pci 0000:00:0c.0: [8086:1e31] type 00 class 0x0c0330
+[    0.378725] pci 0000:00:0c.0: reg 0x10: [mem 0xf1810000-0xf181ffff]
+[    0.382620] pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601
+[    0.383363] pci 0000:00:0d.0: reg 0x10: [io  0xd240-0xd247]
+[    0.383977] pci 0000:00:0d.0: reg 0x14: [io  0xd248-0xd24b]
+[    0.384614] pci 0000:00:0d.0: reg 0x18: [io  0xd250-0xd257]
+[    0.385244] pci 0000:00:0d.0: reg 0x1c: [io  0xd258-0xd25b]
+[    0.385843] pci 0000:00:0d.0: reg 0x20: [io  0xd260-0xd26f]
+[    0.386461] pci 0000:00:0d.0: reg 0x24: [mem 0xf1820000-0xf1821fff]
+[    0.395160] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
+[    0.395450] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 *10 11)
+[    0.395565] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 *9 10 11)
+[    0.395678] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 9 10 *11)
+[    0.395940] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    0.395942] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    0.395945] pci 0000:00:02.0: vgaarb: bridge control possible
+[    0.395945] vgaarb: loaded
+[    0.396113] ACPI: bus type USB registered
+[    0.396125] usbcore: registered new interface driver usbfs
+[    0.396130] usbcore: registered new interface driver hub
+[    0.396140] usbcore: registered new device driver usb
+[    0.396163] pps_core: LinuxPPS API ver. 1 registered
+[    0.396163] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.396165] PTP clock support registered
+[    0.396173] EDAC MC: Ver: 3.0.0
+[    0.401198] PCI: Using ACPI for IRQ routing
+[    0.401201] PCI: pci_cache_line_size set to 64 bytes
+[    0.401518] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.401531] e820: reserve RAM buffer [mem 0x3fff0000-0x3fffffff]
+[    0.401748] NetLabel: Initializing
+[    0.401749] NetLabel:  domain hash size = 128
+[    0.401750] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.401766] NetLabel:  unlabeled traffic allowed by default
+[    0.402010] clocksource: Switched to clocksource kvm-clock
+[    0.416757] VFS: Disk quotas dquot_6.6.0
+[    0.416770] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.416790] *** VALIDATE hugetlbfs ***
+[    0.416834] pnp: PnP ACPI init
+[    0.416903] pnp 00:00: Plug and Play ACPI device, IDs PNP0303 (active)
+[    0.416979] pnp 00:01: Plug and Play ACPI device, IDs PNP0f03 (active)
+[    0.417963] pnp: PnP ACPI: found 2 devices
+[    0.423619] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.423629] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.423630] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.423632] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.423633] pci_bus 0000:00: resource 7 [mem 0x40000000-0xfdffffff window]
+[    0.423692] NET: Registered protocol family 2
+[    0.423843] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes)
+[    0.423850] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.423892] TCP bind hash table entries: 8192 (order: 5, 131072 bytes)
+[    0.423909] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.425596] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    0.425600] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    0.425652] NET: Registered protocol family 1
+[    0.425660] NET: Registered protocol family 44
+[    0.425689] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.425703] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    0.425761] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.426956] PCI: CLS 0 bytes, default 64
+[    0.427013] Trying to unpack rootfs image as initramfs...
+[    0.572749] Freeing initrd memory: 8980K
+[    0.572922] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x229835b7123, max_idle_ns: 440795242976 ns
+[    0.572936] clocksource: Switched to clocksource tsc
+[    0.573006] platform rtc_cmos: registered platform RTC device (no PNP device found)
+[    0.573041] check: Scanning for low memory corruption every 60 seconds
+[    0.573508] Initialise system trusted keyrings
+[    0.573535] Key type blacklist registered
+[    0.573590] workingset: timestamp_bits=41 max_order=18 bucket_order=0
+[    0.576388] zbud: loaded
+[    0.582624] Key type asymmetric registered
+[    0.582626] Asymmetric key parser 'x509' registered
+[    0.582642] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+[    0.586443] io scheduler mq-deadline registered
+[    0.586445] io scheduler kyber registered
+[    0.586539] io scheduler bfq registered
+[    0.586725] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    0.586834] vesafb: mode is 640x480x32, linelength=2560, pages=0
+[    0.586835] vesafb: scrolling: redraw
+[    0.586837] vesafb: Truecolor: size=8:8:8:8, shift=24:16:8:0
+[    0.586855] vesafb: framebuffer at 0xf0000000, mapped to 0x000000000e1772f8, using 1216k, total 1216k
+[    0.586918] fbcon: Deferring console take-over
+[    0.586920] fb0: VESA VGA frame buffer device
+[    0.587002] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.587023] ACPI: Power Button [PWRF]
+[    0.587162] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[    0.587173] ACPI: Sleep Button [SLPF]
+[    0.587348] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[    0.587434] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input2
+[    0.591778] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.603824] usbcore: registered new interface driver usbserial_generic
+[    0.603829] usbserial: USB Serial support registered for generic
+[    0.604201] rtc_cmos rtc_cmos: registered as rtc0
+[    0.604219] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
+[    0.604259] intel_pstate: CPU model not supported
+[    0.604273] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.604479] NET: Registered protocol family 10
+[    0.616842] Segment Routing with IPv6
+[    0.616869] NET: Registered protocol family 17
+[    0.620929] mce: Using 0 MCE banks
+[    0.620950] RAS: Correctable Errors collector initialized.
+[    0.620961] sched_clock: Marking stable (618862653, 1740598)->(726959631, -106356380)
+[    0.621130] registered taskstats version 1
+[    0.621137] Loading compiled-in X.509 certificates
+[    0.625174] Loaded X.509 cert 'Build time autogenerated kernel key: bb0b08f71b47c77ca176d0e75f4f200e5d3ef8d8'
+[    0.625194] zswap: loaded using pool lzo/zbud
+[    0.631107] Key type big_key registered
+[    0.631431] PM:   Magic number: 11:255:914
+[    0.631493] rtc_cmos rtc_cmos: setting system clock to 2019-07-30T01:55:37 UTC (1564451737)
+[    0.637148] Freeing unused decrypted memory: 2040K
+[    0.637428] Freeing unused kernel image memory: 1608K
+[    0.651361] Write protecting the kernel read-only data: 18432k
+[    0.651852] Freeing unused kernel image memory: 2012K
+[    0.651928] Freeing unused kernel image memory: 196K
+[    0.662293] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    0.662295] x86/mm: Checking user space page tables
+[    0.671771] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    0.671776] Run /init as init process
+[    0.689341] fbcon: Taking over console
+[    0.689420] Console: switching to colour frame buffer device 80x30
+[    0.797175] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[    0.797690] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    0.804778] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    0.806387] SCSI subsystem initialized
+[    0.820359] xhci_hcd 0000:00:0c.0: xHCI Host Controller
+[    0.820367] xhci_hcd 0000:00:0c.0: new USB bus registered, assigned bus number 1
+[    0.821894] xhci_hcd 0000:00:0c.0: hcc params 0x04000000 hci version 0x100 quirks 0x000000000000b930
+[    0.832907] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.02
+[    0.832909] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.832911] usb usb1: Product: xHCI Host Controller
+[    0.832912] usb usb1: Manufacturer: Linux 5.2.3-arch1-1-ARCH xhci-hcd
+[    0.832913] usb usb1: SerialNumber: 0000:00:0c.0
+[    0.833286] hub 1-0:1.0: USB hub found
+[    0.833465] hub 1-0:1.0: 8 ports detected
+[    0.834959] xhci_hcd 0000:00:0c.0: xHCI Host Controller
+[    0.834963] xhci_hcd 0000:00:0c.0: new USB bus registered, assigned bus number 2
+[    0.834966] xhci_hcd 0000:00:0c.0: Host supports USB 3.0 SuperSpeed
+[    0.835405] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.02
+[    0.835407] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.835408] usb usb2: Product: xHCI Host Controller
+[    0.835409] usb usb2: Manufacturer: Linux 5.2.3-arch1-1-ARCH xhci-hcd
+[    0.835410] usb usb2: SerialNumber: 0000:00:0c.0
+[    0.835752] hub 2-0:1.0: USB hub found
+[    0.836027] hub 2-0:1.0: 6 ports detected
+[    0.845089] libata version 3.00 loaded.
+[    0.846368] ata_piix 0000:00:01.1: version 2.13
+[    0.850458] ahci 0000:00:0d.0: version 3.0
+[    0.854170] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3
+[    0.854301] scsi host0: ata_piix
+[    0.860070] scsi host1: ata_piix
+[    0.860121] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
+[    0.860122] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
+[    0.862327] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
+[    0.862458] ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+[    0.862460] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+[    0.866618] scsi host2: ahci
+[    0.866728] ata3: SATA max UDMA/133 abar m8192@0xf1820000 port 0xf1820100 irq 21
+[    1.021510] ata2.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+[    1.022292] scsi 1:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+[    1.161166] usb 1-1: new full-speed USB device number 2 using xhci_hcd
+[    1.183136] ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[    1.183291] ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+[    1.183292] ata3.00: 16777216 sectors, multi 128: LBA48 NCQ (depth 32)
+[    1.183521] ata3.00: configured for UDMA/133
+[    1.193858] scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[    1.202847] sd 2:0:0:0: [sda] 16777216 512-byte logical blocks: (8.59 GB/8.00 GiB)
+[    1.202854] sd 2:0:0:0: [sda] Write Protect is off
+[    1.202855] sd 2:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    1.202866] sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.205543] sr 1:0:0:0: [sr0] scsi3-mmc drive: 32x/32x xa/form2 tray
+[    1.205545] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    1.205944] sr 1:0:0:0: Attached scsi CD-ROM sr0
+[    1.209035]  sda: sda1 sda2 sda3
+[    1.209281] sd 2:0:0:0: [sda] Attached SCSI disk
+[    1.300163] random: fast init done
+[    1.303988] usb 1-1: New USB device found, idVendor=80ee, idProduct=0021, bcdDevice= 1.00
+[    1.303990] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
+[    1.303992] usb 1-1: Product: USB Tablet
+[    1.303993] usb 1-1: Manufacturer: VirtualBox
+[    1.308603] hidraw: raw HID events driver (C) Jiri Kosina
+[    1.315090] usbcore: registered new interface driver usbhid
+[    1.315091] usbhid: USB HID core driver
+[    1.320789] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:0c.0/usb1/1-1/1-1:1.0/0003:80EE:0021.0001/input/input5
+[    1.320886] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:0c.0-1/input0
+[    1.365059] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+[    1.591103] systemd[1]: systemd 242.84-1-arch running in system mode. (+PAM +AUDIT -SELINUX -IMA -APPARMOR +SMACK -SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=hybrid)
+[    1.591136] systemd[1]: Detected virtualization oracle.
+[    1.591146] systemd[1]: Detected architecture x86-64.
+[    1.593610] systemd[1]: Set hostname to <os>.
+[    1.829067] systemd[1]: Listening on LVM2 poll daemon socket.
+[    1.829168] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[    1.829239] systemd[1]: Listening on LVM2 metadata daemon socket.
+[    1.829251] systemd[1]: Reached target Remote File Systems.
+[    1.829865] systemd[1]: Created slice system-systemd\x2dfsck.slice.
+[    1.830032] systemd[1]: Created slice system-getty.slice.
+[    1.874557] random: lvm: uninitialized urandom read (4 bytes read)
+[    1.916238] EXT4-fs (sda1): re-mounted. Opts: (null)
+[    1.967762] random: systemd-random-: uninitialized urandom read (512 bytes read)
+[    2.590148] systemd-journald[231]: Received request to flush runtime journal from PID 1
+[    2.734025] ACPI: AC Adapter [AC] (off-line)
+[    2.741882] battery: ACPI: Battery Slot [BAT0] (battery present)
+[    2.787113] Linux agpgart interface v0.103
+[    2.801159] vboxguest: host-version: 6.0.8r130520 0x8000000f
+[    2.825071] piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+[    2.826264] vbg_heartbeat_init: Setting up heartbeat to trigger every 2000 milliseconds
+[    2.842256] input: VirtualBox mouse integration as /devices/pci0000:00/0000:00:04.0/input/input6
+[    2.845813] vboxguest: misc device minor 56, IRQ 20, I/O port d040, MMIO at 0x00000000f1400000 (size 0x0000000000400000)
+[    2.853419] mousedev: PS/2 mouse device common for all mice
+[    2.876220] input: PC Speaker as /devices/platform/pcspkr/input/input7
+[    2.890323] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    2.890324] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    2.926258] RAPL PMU: API unit is 2^-32 Joules, 4 fixed counters, 10737418240 ms ovfl timer
+[    2.926259] RAPL PMU: hw unit of domain pp0-core 2^-0 Joules
+[    2.926260] RAPL PMU: hw unit of domain package 2^-0 Joules
+[    2.926261] RAPL PMU: hw unit of domain dram 2^-0 Joules
+[    2.926261] RAPL PMU: hw unit of domain pp1-gpu 2^-0 Joules
+[    3.059563] Adding 2097148k swap on /dev/sda2.  Priority:-2 extents:1 across:2097148k FS
+[    3.131191] cryptd: max_cpu_qlen set to 1000
+[    3.219645] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input8
+[    3.252779] EXT4-fs (sda3): mounted filesystem with ordered data mode. Opts: (null)
+[    3.349918] random: dbus-daemon: uninitialized urandom read (12 bytes read)
+[    3.372217] random: dbus-daemon: uninitialized urandom read (12 bytes read)
+[    3.416993] 8021q: 802.1Q VLAN Support v1.8
+[    3.508085] AVX2 version of gcm_enc/dec engaged.
+[    3.508086] AES CTR mode by8 optimization enabled
+[    3.697426] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    3.715796] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    3.719615] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    3.719619] cfg80211: failed to load regulatory.db
+[    3.772848] snd_intel8x0 0000:00:05.0: white list rate for 1028:0177 is 48000
+[    3.861410] [drm] DMA map mode: Caching DMA mappings.
+[    3.861577] [drm] Capabilities:
+[    3.861578] [drm]   Cursor.
+[    3.861579] [drm]   Cursor bypass 2.
+[    3.861579] [drm]   Alpha cursor.
+[    3.861579] [drm]   3D.
+[    3.861580] [drm]   Extended Fifo.
+[    3.861580] [drm]   Pitchlock.
+[    3.861580] [drm]   Irq mask.
+[    3.861581] [drm]   GMR.
+[    3.861581] [drm]   Traces.
+[    3.861582] [drm]   GMR2.
+[    3.861582] [drm]   Screen Object 2.
+[    3.861584] [drm] Max GMR ids is 8192
+[    3.861584] [drm] Max number of GMR pages is 1048576
+[    3.861585] [drm] Max dedicated hypervisor surface memory is 507904 kiB
+[    3.861585] [drm] Maximum display memory size is 16384 kiB
+[    3.861586] [drm] VRAM at 0xf0000000 size is 16384 kiB
+[    3.861587] [drm] MMIO at 0xf1000000 size is 2048 kiB
+[    3.861609] vmwgfx 0000:00:02.0: BAR 1: can't reserve [mem 0xf0000000-0xf0ffffff]
+[    3.861609] [drm] It appears like vesafb is loaded. Ignore above error if any.
+[    3.874566] [TTM] Zone  kernel: Available graphics memory: 504216 KiB
+[    3.874568] [TTM] Initializing pool allocator
+[    3.874574] [TTM] Initializing DMA pool allocator
+[    3.874597] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+[    3.874598] [drm] No driver support for vblank timestamp query.
+[    3.874850] [drm] Screen Objects Display Unit initialized
+[    3.874903] [drm] width 640
+[    3.874915] [drm] height 480
+[    3.874926] [drm] bpp 32
+[    3.875463] [drm] Fifo max 0x00200000 min 0x00001000 cap 0x00000355
+[    3.875473] [drm] DX: no.
+[    3.875474] [drm] Atomic: yes.
+[    3.875474] [drm] SM4_1: no.
+[    3.875497] [drm:vmw_host_log [vmwgfx]] *ERROR* Failed to send host log message.
+[    3.875510] [drm:vmw_host_log [vmwgfx]] *ERROR* Failed to send host log message.
+[    3.940495] checking generic (f0000000 130000) vs hw (f0000000 1000000)
+[    3.940499] fb0: switching to svgadrmfb from VESA VGA
+[    3.940529] Console: switching to colour dummy device 80x25
+[    3.952056] fbcon: svgadrmfb (fb0) is primary device
+[    3.953653] Console: switching to colour frame buffer device 100x37
+[    3.965877] [drm] Initialized vmwgfx 2.15.0 20180704 for 0000:00:02.0 on minor 0
+[    4.335559] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:97:d4:ac
+[    4.335564] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[    4.339853] e1000 0000:00:03.0 enp0s3: renamed from eth0
+[    4.381993] 8021q: adding VLAN 0 to HW filter on device enp0s3
+[    6.030155] random: crng init done
+[    6.495237] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    6.495580] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s3: link becomes ready
+[  650.207102] sort_kernel: loading out-of-tree module taints kernel.
+[  650.207136] sort_kernel: module verification failed: signature and/or required key missing - tainting kernel
+[  650.208348]  ================================================
+[  650.208350] |                                                |
+[  650.208351] | Array Size:           12                       |
+[  650.208351] | Input File:           Hard coded Array         |
+[  650.208352] | Number of Threads:    3                        |
+[  650.208353] |                                                |
+[  650.208353]  ================================================
 
-[ 3289.616928] Thread#0 Created successfully
-[ 3289.616931] Thread Running
-[ 3290.632696] Thread#1 Created successfully
-[ 3290.632701] Thread Running
-[ 3291.645891] Creating Thread
-[ 3291.645955] Thread Created successfully
-[ 3291.646442] Thread Running
-[ 3291.832929] Thread Stopping
-[ 3292.685750] Thread Stopping
-[ 3293.752599] Thread Stopping
-[ 3645.700333] Cleaning Up
-[ 3648.190098]  ================================================
-[ 3648.190100] |                                                |
-[ 3648.190101] | Array Size:		12                      |
-[ 3648.190102] | Input File:		Hard coded Array        |
-[ 3648.190103] | Number of Threads:	2                       |
-[ 3648.190103] |                                                |
-[ 3648.190104]  ================================================
-
-[ 3648.190139] Thread#0 Created successfully
-[ 3648.190142] Thread#0 Running
-[ 3649.218874] Thread#1 Created successfully
-[ 3649.218878] Thread#1 Running
-[ 3650.232263] Creating Thread
-[ 3650.232324] Thread Created successfully
-[ 3650.232814] BUG: kernel NULL pointer dereference, address: 0000000000000008
-[ 3650.233713] #PF: supervisor read access in kernel mode
-[ 3650.234620] #PF: error_code(0x0000) - not-present page
-[ 3650.235267] PGD 0 P4D 0 
-[ 3650.235896] Oops: 0000 [#1] PREEMPT SMP PTI
-[ 3650.236534] CPU: 0 PID: 12959 Comm: mythread Tainted: G           OE     5.2.3-arch1-1-ARCH #1
-[ 3650.237263] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
-[ 3650.237923] RIP: 0010:thread_fn+0x5/0x1b [sort_kernel]
-[ 3650.238573] Code: 6b c0 89 14 85 e0 53 6b c0 48 83 c0 01 39 41 04 7d e9 41 83 c5 01 44 01 e5 44 39 eb 75 97 5b 5d 41 5c 41 5d c3 0f 1f 44 00 00 <8b> 77 08 48 c7 c7 3c 40 6b c0 e8 e1 4d 24 d9 31 ff e8 1c db 1d d9
-[ 3650.240441] RSP: 0018:ffffb24a0042bf10 EFLAGS: 00010246
-[ 3650.241057] RAX: ffffffffc06b3349 RBX: ffff93e43802b458 RCX: 0000000000000000
-[ 3650.241692] RDX: 0000000000000001 RSI: 0000000000000246 RDI: 0000000000000000
-[ 3650.242403] RBP: ffff93e43802b420 R08: 00000351e2d46824 R09: ffff93e43ea2a4b0
-[ 3650.242991] R10: 0000000000000000 R11: 0000000000000000 R12: ffff93e43802a080
-[ 3650.243524] R13: ffffb24a026a3b70 R14: 0000000000000000 R15: ffff93e43cb61e40
-[ 3650.244041] FS:  0000000000000000(0000) GS:ffff93e43ea00000(0000) knlGS:0000000000000000
-[ 3650.244571] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
-[ 3650.245105] CR2: 0000000000000008 CR3: 0000000038130006 CR4: 00000000000606f0
-[ 3650.245650] Call Trace:
-[ 3650.246181]  kthread+0xfb/0x130
-[ 3650.246706]  ? merge_routine+0xa9/0xa9 [sort_kernel]
-[ 3650.247295]  ? kthread_park+0x80/0x80
-[ 3650.247821]  ret_from_fork+0x35/0x40
-[ 3650.248331] Modules linked in: sort_kernel(OE) vmwgfx intel_powerclamp crct10dif_pclmul crc32_pclmul ghash_clmulni_intel cfg80211 ttm drm_kms_helper rfkill 8021q garp mrp stp snd_intel8x0 llc aesni_intel snd_ac97_codec drm aes_x86_64 ac97_bus snd_pcm crypto_simd cryptd glue_helper psmouse snd_timer intel_rapl_perf snd input_leds joydev e1000 mousedev pcspkr intel_agp battery syscopyarea intel_gtt sysfillrect evdev agpgart sysimgblt soundcore ac mac_hid fb_sys_fops i2c_piix4 vboxguest ip_tables x_tables ext4 hid_generic usbhid crc32c_generic crc16 mbcache hid jbd2 sr_mod sd_mod cdrom ata_generic pata_acpi ahci libahci ata_piix serio_raw atkbd libps2 libata xhci_pci crc32c_intel scsi_mod xhci_hcd i8042 serio [last unloaded: sort_kernel]
-[ 3650.253239] CR2: 0000000000000008
-[ 3650.253842] ---[ end trace 2408ee90d7581476 ]---
-[ 3650.254446] RIP: 0010:thread_fn+0x5/0x1b [sort_kernel]
-[ 3650.255117] Code: 6b c0 89 14 85 e0 53 6b c0 48 83 c0 01 39 41 04 7d e9 41 83 c5 01 44 01 e5 44 39 eb 75 97 5b 5d 41 5c 41 5d c3 0f 1f 44 00 00 <8b> 77 08 48 c7 c7 3c 40 6b c0 e8 e1 4d 24 d9 31 ff e8 1c db 1d d9
-[ 3650.256958] RSP: 0018:ffffb24a0042bf10 EFLAGS: 00010246
-[ 3650.257584] RAX: ffffffffc06b3349 RBX: ffff93e43802b458 RCX: 0000000000000000
-[ 3650.258220] RDX: 0000000000000001 RSI: 0000000000000246 RDI: 0000000000000000
-[ 3650.259167] RBP: ffff93e43802b420 R08: 00000351e2d46824 R09: ffff93e43ea2a4b0
-[ 3650.259793] R10: 0000000000000000 R11: 0000000000000000 R12: ffff93e43802a080
-[ 3650.260407] R13: ffffb24a026a3b70 R14: 0000000000000000 R15: ffff93e43cb61e40
-[ 3650.261101] FS:  0000000000000000(0000) GS:ffff93e43ea00000(0000) knlGS:0000000000000000
-[ 3650.261827] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
-[ 3650.262538] CR2: 0000000000000008 CR3: 0000000038130006 CR4: 00000000000606f0
-[ 3682.588764] Cleaning Up
-[ 3877.547247]  ================================================
-[ 3877.547954] |                                                |
-[ 3877.548600] | Array Size:		12                      |
-[ 3877.549242] | Input File:		Hard coded Array        |
-[ 3877.550268] | Number of Threads:	2                       |
-[ 3877.550838] |                                                |
-[ 3877.551410]  ================================================
-
-[ 3877.552788] Thread#0 Created successfully
-[ 3877.553368] Thread Running
-[ 3878.578519] Thread#1 Created successfully
-[ 3878.579130] Thread Running
-[ 3879.591905] Creating Thread
-[ 3879.592752] Thread Created successfully
-[ 3879.594001] Thread Running
-[ 3980.426289] Cleaning Up
-[ 3986.034010]  ================================================
-[ 3986.034643] |                                                |
-[ 3986.035221] | Array Size:    12                      |
-[ 3986.035978] | Input File:    Hard coded Array        |
-[ 3986.036484] | Number of Threads:    2                       |
-[ 3986.036985] |                                                |
-[ 3986.037478]  ================================================
-
-[ 3986.038710] Thread#0 Created successfully
-[ 3986.039187] Thread Running
-[ 3987.058400] Thread#1 Created successfully
-[ 3987.058949] Thread Running
-[ 3988.071733] Creating Thread
-[ 3988.072561] Thread Created successfully
-[ 3988.073805] Thread Running
-[ 4033.058176] Cleaning Up
-[ 4035.786774]  ================================================
-[ 4035.787505] |                                                |
-[ 4035.788175] | Array Size:    12                            |
-[ 4035.789017] | Input File:    Hard coded Array              |
-[ 4035.789586] | Number of Threads:    2                        |
-[ 4035.790143] |                                                |
-[ 4035.790694]  ================================================
-
-[ 4035.791973] Thread#0 Created successfully
-[ 4035.792451] Thread Running
-[ 4036.818409] Thread#1 Created successfully
-[ 4036.818958] Thread Running
-[ 4037.831769] Creating Thread
-[ 4037.832596] Thread Created successfully
-[ 4037.833809] Thread Running
-[ 4084.633149] Cleaning Up
-[ 4088.354263]  ================================================
-[ 4088.355013] |                                                |
-[ 4088.355732] | Array Size:           12                       |
-[ 4088.356355] | Input File:           Hard coded Array         |
-[ 4088.357010] | Number of Threads:    2                        |
-[ 4088.357566] |                                                |
-[ 4088.358086]  ================================================
-
-[ 4088.359458] Thread#0 Created successfully
-[ 4088.360391] Thread Running
-[ 4089.378516] Thread#1 Created successfully
-[ 4089.379063] Thread Running
-[ 4090.391669] Creating Thread
-[ 4090.392496] Thread Created successfully
-[ 4090.393780] Thread Running
-[ 4112.951625] e1000: enp0s3 NIC Link is Down
-[ 4115.085357] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
-[ 4117.218330] e1000: enp0s3 NIC Link is Down
-[ 4117.219234] e1000 0000:00:03.0 enp0s3: Reset adapter
-[ 4119.352257] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
-[ 4127.885164] e1000: enp0s3 NIC Link is Down
-[ 4127.886092] e1000 0000:00:03.0 enp0s3: Reset adapter
-[ 4130.018976] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
-[ 4257.358630] Cleaning Up
-[ 4260.590576]  ================================================
-[ 4260.591240] |                                                |
-[ 4260.592015] | Array Size:           12                       |
-[ 4260.592530] | Input File:           Hard coded Array         |
-[ 4260.593039] | Number of Threads:    2                        |
-[ 4260.593540] |                                                |
-[ 4260.594044]  ================================================
-
-[ 4260.595284] Thread#0 Created successfully
-[ 4260.595747] Thread Running
-[ 4261.618369] Thread#1 Created successfully
-[ 4261.618919] Thread Running
-[ 4262.631741] Creating Thread
-[ 4262.632673] Thread Created successfully
-[ 4262.633920] Thread Running
-[ 4272.789853] Cleaning Up
-[ 4394.640483]  ================================================
-[ 4394.641071] |                                                |
-[ 4394.641957] | Array Size:           12                       |
-[ 4394.642641] | Input File:           Hard coded Array         |
-[ 4394.643286] | Number of Threads:    \xe2\x80\x932                        |
-[ 4394.644095] |                                                |
-[ 4394.644966]  ================================================
-
-[ 4394.646920] Thread#0 Created successfully
-[ 4394.647403] Thread#0 Running
-[ 4395.671742] Thread#1 Created successfully
-[ 4395.672245] Thread#1 Running
-[ 4467.673608] Cleaning Up
-[ 4469.622693]  ================================================
-[ 4469.623357] |                                                |
-[ 4469.623931] | Array Size:           12                       |
-[ 4469.624742] | Input File:           Hard coded Array         |
-[ 4469.625294] | Number of Threads:    2                        |
-[ 4469.625841] |                                                |
-[ 4469.626375]  ================================================
-
-[ 4469.627598] Thread#0 Created successfully
-[ 4469.628380] Thread#0 Running
-[ 4470.657907] Thread#1 Created successfully
-[ 4470.658656] Thread#1 Running
-[ 4767.461529] Cleaning Up
-[ 4769.959197]  ================================================
-[ 4769.959785] |                                                |
-[ 4769.960422] | Array Size:           12                       |
-[ 4769.960984] | Input File:           Hard coded Array         |
-[ 4769.961535] | Number of Threads:    2                        |
-[ 4769.962312] |                                                |
-[ 4769.962792]  ================================================
-
-[ 4769.963752] Thread#0 Created successfully
-[ 4769.964417] Thread#0 Running
-[ 4769.964920] BEFORE SORT:
-[ 4769.964921] 2 
-[ 4769.965333] 5 
-[ 4769.965738] 3 
-[ 4769.966150] 1 
-[ 4769.966939] 6 
-[ 4769.967401] 8 
-
-[ 4769.968452] AFTER SORT:
-[ 4769.968452] 1 
-[ 4769.969179] 2 
-[ 4769.969509] 3 
-[ 4769.969814] 5 
-[ 4769.970118] 6 
-[ 4769.970409] 8 
-
-[ 4770.977586] Thread#1 Created successfully
-[ 4770.977925] Thread#1 Running
-[ 4770.978236] BEFORE SORT:
-[ 4770.978237] 7 
-[ 4770.978535] 9 
-[ 4770.978814] 53 
-[ 4770.979075] 23 
-[ 4770.979320] 3 
-[ 4770.979549] 4 
-
-[ 4770.980161] AFTER SORT:
-[ 4770.980161] 3 
-[ 4770.980346] 4 
-[ 4770.980553] 7 
-[ 4770.980722] 9 
-[ 4770.980884] 23 
-[ 4770.981036] 53 
-
-[ 4905.054651] Cleaning Up
-[ 4910.991406]  ================================================
-[ 4910.992022] |                                                |
-[ 4910.992574] | Array Size:           12                       |
-[ 4910.993231] | Input File:           Hard coded Array         |
-[ 4910.993872] | Number of Threads:    2                        |
-[ 4910.994486] |                                                |
-[ 4910.995682]  ================================================
-
-[ 4910.997176] Thread#0 Created successfully
-[ 4910.998150] Thread#0 Running
-[ 4910.998594] BEFORE SORT:2 5 3 1 6 8 
-
-[ 4910.999628] AFTER SORT:1 2 3 5 6 8 
-
-[ 4912.017583] Thread#1 Created successfully
-[ 4912.018086] Thread#1 Running
-[ 4912.018556] BEFORE SORT:7 9 53 23 3 4 
-
-[ 4912.019448] AFTER SORT:3 4 7 9 23 53 
-
-[ 5301.782065] Cleaning Up
-[ 5308.648889]  ================================================
-[ 5308.649445] |                                                |
-[ 5308.649984] | Array Size:           12                       |
-[ 5308.650482] | Input File:           Hard coded Array         |
-[ 5308.650980] | Number of Threads:    2                        |
-[ 5308.651461] |                                                |
-[ 5308.653048]  ================================================
-
-[ 5308.654163] Thread#0 Created successfully
-[ 5308.654647] Thread#0 Running
-[ 5308.655149] BEFORE SORT:2 5 3 1 6 8 
-[ 5308.655152] AFTER SORT:1 2 3 5 6 8 
-[ 5309.670366] Thread#1 Created successfully
-[ 5309.671452] Thread#1 Running
-[ 5309.671959] BEFORE SORT:7 9 53 23 3 4 
-[ 5309.671961] AFTER SORT:3 4 7 9 23 53 
-[ 5310.683709] do_init_module: 'sort_kernel'->init suspiciously returned 1, it should follow 0/-E convention
-               do_init_module: loading module anyway...
-[ 5310.685716] CPU: 0 PID: 18258 Comm: insmod Tainted: G      D    OE     5.2.3-arch1-1-ARCH #1
-[ 5310.686232] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
-[ 5310.686748] Call Trace:
-[ 5310.687592]  dump_stack+0x5c/0x80
-[ 5310.688529]  do_init_module.cold+0x21/0x26
-[ 5310.689053]  load_module+0x2124/0x23a0
-[ 5310.689521]  ? __se_sys_finit_module+0xa8/0x100
-[ 5310.690111]  __se_sys_finit_module+0xa8/0x100
-[ 5310.690614]  do_syscall_64+0x5f/0x1d0
-[ 5310.691064]  ? page_fault+0x8/0x30
-[ 5310.691510]  entry_SYSCALL_64_after_hwframe+0x44/0xa9
-[ 5310.691997] RIP: 0033:0x7fb732fade3d
-[ 5310.692450] Code: 00 c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 23 50 0c 00 f7 d8 64 89 01 48
-[ 5310.693861] RSP: 002b:00007ffcb3c889b8 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
-[ 5310.694316] RAX: ffffffffffffffda RBX: 000055574bfdd790 RCX: 00007fb732fade3d
-[ 5310.694882] RDX: 0000000000000000 RSI: 000055574b64a400 RDI: 0000000000000003
-[ 5310.695339] RBP: 000055574b64a400 R08: 0000000000000000 R09: 00007fb733076b40
-[ 5310.695793] R10: 0000000000000003 R11: 0000000000000246 R12: 0000000000000000
-[ 5310.696252] R13: 000055574bfdd760 R14: 0000000000000000 R15: 0000000000000000
-[ 5310.697342] Thread#2 Running MERGING
-[ 5616.061892] Cleaning Up
-[ 5621.751157]  ================================================
-[ 5621.751786] |                                                |
-[ 5621.752440] | Array Size:           12                       |
-[ 5621.752991] | Input File:           Hard coded Array         |
-[ 5621.753826] | Number of Threads:    2                        |
-[ 5621.754471] |                                                |
-[ 5621.755009]  ================================================
-
-[ 5621.756103] Thread#0 Created successfully
-[ 5621.756966] Thread#0 Running
-[ 5621.757559] BEFORE SORT:2 5 3 1 6 8 
-[ 5621.757562] AFTER SORT:1 2 3 5 6 8 
-[ 5622.763732] Thread#1 Created successfully
-[ 5622.765326] Thread#1 Running
-[ 5622.766077] BEFORE SORT:7 9 53 23 3 4 
-[ 5622.766081] AFTER SORT:3 4 7 9 23 53 
-[ 5623.776763] Thread#2 Created successfully
-[ 5623.777904] enter merge fn
-[ 5623.777905] Thread#2 Running MERGING
-[ 5831.685635] Cleaning Up
-[ 5903.679549]  ================================================
-[ 5903.680147] |                                                |
-[ 5903.680742] | Array Size:           12                       |
-[ 5903.681321] | Input File:           Hard coded Array         |
-[ 5903.682213] | Number of Threads:    2                        |
-[ 5903.682719] |                                                |
-[ 5903.683432]  ================================================
-
-[ 5903.684443] Thread#0 Created successfully
-[ 5903.684921] Thread#0 Running
-[ 5903.685407] BEFORE SORT:2 5 3 1 6 8 
-[ 5903.685409] AFTER SORT:1 2 3 5 6 8 
-[ 5904.709852] Thread#1 Created successfully
-[ 5904.710878] Thread#1 Running
-[ 5904.711379] BEFORE SORT:7 9 53 23 3 4 
-[ 5904.711382] AFTER SORT:3 4 7 9 23 53 
-[ 5905.723462] Thread#2 Created successfully
-[ 5905.724458] 
+[  650.208385] Thread#0 Created successfully
+[  650.208388] Thread#0 -> SORT
+[  650.208388] BEFORE SORT:2 5 3 1 
+[  650.208390] AFTER SORT:1 2 3 5 
+[  650.208391] -------------------------------
+[  651.214093] Thread#1 Created successfully
+[  651.214097] Thread#1 -> SORT
+[  651.214097] BEFORE SORT:6 8 7 9 
+[  651.214099] AFTER SORT:6 7 8 9 
+[  651.214100] -------------------------------
+[  652.227597] Thread#2 Created successfully
+[  652.227603] Thread#2 -> SORT
+[  652.227603] BEFORE SORT:53 23 3 4 
+[  652.227606] AFTER SORT:3 4 23 53 
+[  652.227608] -------------------------------
+[  653.240733] Thread#3 Created successfully
+[  653.240737] Thread#3 -> MERGE
+[  653.240744] -----------------------------
+[  655.454208] 
                INPUT ARRAY:
-[ 5905.725372] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 5905.725375] 
+[  655.454211] 2 5 3 1 6 8 7 9 53 23 3 4 
+[  655.454215] 
                FINAL RESULT:
-[ 5905.726972] Thread#2 Running MERGING
-[ 5905.727490] 1 2 3 3 4 5 6 7 8 9 23 53 
-[ 5905.727495] do_init_module: 'sort_kernel'->init suspiciously returned 3, it should follow 0/-E convention
-               do_init_module: loading module anyway...
-[ 5905.729221] CPU: 0 PID: 19767 Comm: insmod Tainted: G      D    OE     5.2.3-arch1-1-ARCH #1
-[ 5905.729663] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
-[ 5905.730080] Call Trace:
-[ 5905.730508]  dump_stack+0x5c/0x80
-[ 5905.730934]  do_init_module.cold+0x21/0x26
-[ 5905.731362]  load_module+0x2124/0x23a0
-[ 5905.731817]  ? __se_sys_finit_module+0xa8/0x100
-[ 5905.732252]  __se_sys_finit_module+0xa8/0x100
-[ 5905.732679]  do_syscall_64+0x5f/0x1d0
-[ 5905.733110]  ? page_fault+0x8/0x30
-[ 5905.733526]  entry_SYSCALL_64_after_hwframe+0x44/0xa9
-[ 5905.733891] RIP: 0033:0x7f61d91b5e3d
-[ 5905.734258] Code: 00 c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 23 50 0c 00 f7 d8 64 89 01 48
-[ 5905.735448] RSP: 002b:00007ffc55926898 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
-[ 5905.735873] RAX: ffffffffffffffda RBX: 000055d19c2a5790 RCX: 00007f61d91b5e3d
-[ 5905.736300] RDX: 0000000000000000 RSI: 000055d19a2a1400 RDI: 0000000000000003
-[ 5905.736911] RBP: 000055d19a2a1400 R08: 0000000000000000 R09: 00007f61d927eb40
-[ 5905.737349] R10: 0000000000000003 R11: 0000000000000246 R12: 0000000000000000
-[ 5905.737829] R13: 000055d19c2a5760 R14: 0000000000000000 R15: 0000000000000000
-[ 6096.687815] Cleaning Up
-[ 6099.823154]  ================================================
-[ 6099.823698] |                                                |
-[ 6099.824243] | Array Size:           12                       |
-[ 6099.824781] | Input File:           Hard coded Array         |
-[ 6099.825320] | Number of Threads:    2                        |
-[ 6099.825914] |                                                |
-[ 6099.826908]  ================================================
+[  655.454216] 1 2 3 3 4 5 6 7 8 9 23 53 
 
-[ 6099.828044] Thread#0 Created successfully
-[ 6099.828568] Thread#0 Running
-[ 6099.829120] BEFORE SORT:2 5 3 1 6 8 
-[ 6099.829122] AFTER SORT:1 2 3 5 6 8 
-[ 6100.843206] Thread#1 Created successfully
-[ 6100.844260] Thread#1 Running
-[ 6100.844767] BEFORE SORT:7 9 53 23 3 4 
-[ 6100.844769] AFTER SORT:3 4 7 9 23 53 
-[ 6101.856281] Thread#2 Created successfully
-[ 6101.857350] 
-               INPUT ARRAY:
-[ 6101.858344] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 6101.858347] 
-               FINAL RESULT:
-[ 6101.860412] Thread#2 Running MERGING
-[ 6101.860920] 1 2 3 3 4 5 6 7 8 9 23 53 
-[ 6101.860924] do_init_module: 'sort_kernel'->init suspiciously returned 3, it should follow 0/-E convention
-               do_init_module: loading module anyway...
-[ 6101.863272] CPU: 0 PID: 19776 Comm: insmod Tainted: G      D    OE     5.2.3-arch1-1-ARCH #1
-[ 6101.863780] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
-[ 6101.864224] Call Trace:
-[ 6101.864669]  dump_stack+0x5c/0x80
-[ 6101.865369]  do_init_module.cold+0x21/0x26
-[ 6101.865806]  load_module+0x2124/0x23a0
-[ 6101.866268]  ? __se_sys_finit_module+0xa8/0x100
-[ 6101.866686]  __se_sys_finit_module+0xa8/0x100
-[ 6101.867179]  do_syscall_64+0x5f/0x1d0
-[ 6101.867595]  ? page_fault+0x8/0x30
-[ 6101.867999]  entry_SYSCALL_64_after_hwframe+0x44/0xa9
-[ 6101.868405] RIP: 0033:0x7fac6fa32e3d
-[ 6101.868813] Code: 00 c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 23 50 0c 00 f7 d8 64 89 01 48
-[ 6101.870166] RSP: 002b:00007ffdea65d728 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
-[ 6101.870639] RAX: ffffffffffffffda RBX: 0000557c115a6790 RCX: 00007fac6fa32e3d
-[ 6101.871111] RDX: 0000000000000000 RSI: 0000557c10c4b400 RDI: 0000000000000003
-[ 6101.871540] RBP: 0000557c10c4b400 R08: 0000000000000000 R09: 00007fac6fafbb40
-[ 6101.871976] R10: 0000000000000003 R11: 0000000000000246 R12: 0000000000000000
-[ 6101.872413] R13: 0000557c115a6760 R14: 0000000000000000 R15: 0000000000000000
-[ 6261.150030] Cleaning Up
-[ 6339.295466]  ================================================
-[ 6339.296132] |                                                |
-[ 6339.296694] | Array Size:           12                       |
-[ 6339.297245] | Input File:           Hard coded Array         |
-[ 6339.297803] | Number of Threads:    2                        |
-[ 6339.298376] |                                                |
-[ 6339.298879]  ================================================
-
-[ 6339.300252] Thread#0 Created successfully
-[ 6339.300791] Thread#0 Running
-[ 6339.301270] BEFORE SORT:2 5 3 1 6 8 
-[ 6339.301272] AFTER SORT:1 2 3 5 6 8 
-[ 6340.309393] Thread#1 Created successfully
-[ 6340.310518] Thread#1 Running
-[ 6340.311055] BEFORE SORT:7 9 53 23 3 4 
-[ 6340.311057] AFTER SORT:3 4 7 9 23 53 
-[ 6341.323046] Thread#3 Created successfully
-[ 6341.324575] 
-               INPUT ARRAY:
-[ 6341.326558] Thread#3 Running MERGING
-[ 6341.327158] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 6341.327161] 
-               FINAL RESULT:
-[ 6341.328499] 1 2 3 3 4 5 6 7 8 9 23 53 
-[ 6437.981830] Cleaning Up
-[ 6444.375139]  ================================================
-[ 6444.375754] |                                                |
-[ 6444.376316] | Array Size:           12                       |
-[ 6444.376884] | Input File:           Hard coded Array         |
-[ 6444.377453] | Number of Threads:    2                        |
-[ 6444.378014] |                                                |
-[ 6444.378563]  ================================================
-
-[ 6444.379928] Thread#0 Created successfully
-[ 6444.380411] Thread#0 Running
-[ 6444.380865] BEFORE SORT:2 5 3 1 6 8 
-[ 6444.380867] AFTER SORT:1 2 3 5 6 8 
-[ 6445.402948] Thread#1 Created successfully
-[ 6445.404527] Thread#1 Running
-[ 6445.405363] BEFORE SORT:7 9 53 23 3 4 
-[ 6445.405366] AFTER SORT:3 4 7 9 23 53 
-[ 6446.416088] Thread#3 Created successfully
-[ 6446.417655] Thread#3 Running MERGING
-[ 6449.589446] 
-               INPUT ARRAY:
-[ 6449.590517] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 6449.590521] 
-               FINAL RESULT:
-[ 6449.591790] 1 2 3 3 4 5 6 7 8 9 23 53 
-[ 6455.965951] Cleaning Up
-[ 6628.520477]  ================================================
-[ 6628.521068] |                                                |
-[ 6628.521776] | Array Size:           12                       |
-[ 6628.522654] | Input File:           Hard coded Array         |
-[ 6628.523231] | Number of Threads:    2                        |
-[ 6628.523802] |                                                |
-[ 6628.524369]  ================================================
-
-[ 6628.525409] 
-               INPUT ARRAY:
-[ 6628.526625] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 6628.526668] Thread#0 Created successfully
-[ 6628.527661] Thread#0 Running
-[ 6628.528099] BEFORE SORT:2 5 3 1 6 8 
-[ 6628.528101] AFTER SORT:1 2 3 5 6 8 
-[ 6629.535915] Thread#1 Created successfully
-[ 6629.537438] Thread#1 Running
-[ 6629.538083] BEFORE SORT:7 9 53 23 3 4 
-[ 6629.538086] AFTER SORT:3 4 7 9 23 53 
-[ 6630.549378] Thread#3 Created successfully
-[ 6630.550328] Thread#3 Running MERGING
-[ 6632.629071] 
-               FINAL RESULT:
-[ 6632.630178] 1 2 3 3 4 5 6 7 8 9 23 53 
-[ 6646.052442] Cleaning Up
-[ 6724.149131] e1000: enp0s3 NIC Link is Down
-[ 6728.416332] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
-[ 6805.264908]  ================================================
-[ 6805.266106] |                                                |
-[ 6805.267406] | Array Size:           12                       |
-[ 6805.267912] | Input File:           Hard coded Array         |
-[ 6805.268473] | Number of Threads:    2                        |
-[ 6805.268971] |                                                |
-[ 6805.269485]  ================================================
-
-[ 6805.270504] 
-               INPUT ARRAY:
-[ 6805.271467] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 6805.271532] Thread#0 Created successfully
-[ 6805.272471] Thread#0 Running
-[ 6805.272912] BEFORE SORT:2 5 3 1 6 8 
-[ 6805.272914] AFTER SORT:1 2 3 5 6 8 
-[ 6806.282472] Thread#1 Created successfully
-[ 6806.283664] Thread#1 Running
-[ 6806.284151] BEFORE SORT:7 9 53 23 3 4 
-[ 6806.284153] AFTER SORT:3 4 7 9 23 53 
-[ 6807.295870] Thread#3 Created successfully
-[ 6807.297239] Thread#3 Running MERGING
-[ 6809.482357] 
-               FINAL RESULT:
-[ 6809.483232] 1 2 3 3 4 5 6 7 8 9 23 53 
-[ 6820.472410] Cleaning Up
-[ 6947.089161]  ================================================
-[ 6947.089823] |                                                |
-[ 6947.090368] | Array Size:           12                       |
-[ 6947.090906] | Input File:           Hard coded Array         |
-[ 6947.091503] | Number of Threads:    2                        |
-[ 6947.092427] |                                                |
-[ 6947.092934]  ================================================
-
-[ 6947.093937] 
-               INPUT ARRAY:
-[ 6947.094881] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 6947.094933] Thread#0 Created successfully
-[ 6947.096141] Thread#0 Running
-[ 6947.096579] BEFORE SORT:2 5 3 1 6 8 
-[ 6947.096581] AFTER SORT:1 2 3 5 6 8 
-[ 6948.122152] Thread#1 Created successfully
-[ 6948.123381] Thread#1 Running
-[ 6948.123867] BEFORE SORT:7 9 53 23 3 4 
-[ 6948.123869] AFTER SORT:3 4 7 9 23 53 
-[ 6949.135638] Thread#3 Created successfully
-[ 6949.137059] Thread#3 Running MERGING
-[ 6951.349197] 
-               FINAL RESULT:
-[ 6951.350075] 1 2 3 3 4 5 6 7 8 9 23 53 
-[ 6985.567414] Cleaning Up
-[ 7039.569190]  ================================================
-[ 7039.569744] |                                                |
-[ 7039.570293] | Array Size:           12                       |
-[ 7039.570837] | Input File:           Hard coded Array         |
-[ 7039.571451] | Number of Threads:    2                        |
-[ 7039.571987] |                                                |
-[ 7039.572801]  ================================================
-
-[ 7039.573807] 
-               INPUT ARRAY:
-[ 7039.574786] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 7039.574839] Thread#0 Created successfully
-[ 7039.576020] Thread#0 Running
-[ 7039.576458] BEFORE SORT:2 5 3 1 6 8 
-[ 7039.576460] AFTER SORT:1 2 3 5 6 8 
-[ 7040.602093] Thread#1 Created successfully
-[ 7040.603613] Thread#1 Running
-[ 7040.604342] BEFORE SORT:7 9 53 23 3 4 
-[ 7040.604345] AFTER SORT:3 4 7 9 23 53 
-[ 7041.616023] Thread#3 Created successfully
-[ 7041.617418] Thread#3 Running MERGING
-[ 7043.722067] 
-               FINAL RESULT:
-[ 7043.723374] 1 2 3 5 6 8 3 4 7 9 23 53 
-[ 7224.160978] Cleaning Up
-[ 7226.295642]  ================================================
-[ 7226.296238] |                                                |
-[ 7226.296832] | Array Size:           12                       |
-[ 7226.297408] | Input File:           Hard coded Array         |
-[ 7226.297975] | Number of Threads:    2                        |
-[ 7226.298870] |                                                |
-[ 7226.299368]  ================================================
-
-[ 7226.300325] 
-               INPUT ARRAY:
-[ 7226.301240] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 7226.301291] Thread#0 Created successfully
-[ 7226.302420] Thread#0 Running
-[ 7226.302900] BEFORE SORT:2 5 3 1 6 8 
-[ 7226.302902] AFTER SORT:1 2 3 5 6 8 
-[ 7227.321939] Thread#1 Created successfully
-[ 7227.323429] Thread#1 Running
-[ 7227.323932] BEFORE SORT:7 9 53 23 3 4 
-[ 7227.323935] AFTER SORT:3 4 7 9 23 53 
-[ 7228.335825] Thread#3 Created successfully
-[ 7228.337158] Thread#3 Running MERGING
-[ 7230.388897] result array is 4
-[ 7230.388899] 
-               FINAL RESULT:
-[ 7230.390707] 1 2 3 3 4 5 6 7 8 9 23 53 
-[ 7358.287660] Cleaning Up
-[ 7367.921674]  ================================================
-[ 7367.922194] |                                                |
-[ 7367.922701] | Array Size:           12                       |
-[ 7367.923211] | Input File:           Hard coded Array         |
-[ 7367.923720] | Number of Threads:    2                        |
-[ 7367.924222] |                                                |
-[ 7367.924714]  ================================================
-
-[ 7367.926028] 
-               INPUT ARRAY:
-[ 7367.926933] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 7367.926985] Thread#0 Created successfully
-[ 7367.927920] Thread#0 Running
-[ 7367.928524] BEFORE SORT:2 5 3 1 6 8 
-[ 7367.928526] AFTER SORT:1 2 3 5 6 8 
-[ 7368.948687] Thread#1 Created successfully
-[ 7368.950108] Thread#1 Running
-[ 7368.950895] BEFORE SORT:7 9 53 23 3 4 
-[ 7368.950899] AFTER SORT:3 4 7 9 23 53 
-[ 7369.962051] Thread#3 Created successfully
-[ 7369.963408] Thread#3 Running MERGING
-[ 7372.041827] 
-               FINAL RESULT:
-[ 7372.042648] 1
-[ 7372.042649] 2
-[ 7372.043037] 3
-[ 7372.043448] 3
-[ 7372.043762] 4
-[ 7372.044076] 5
-[ 7372.044384] 6
-[ 7372.044718] 7
-[ 7372.045011] 8
-[ 7372.045645] 9
-[ 7372.045923] 23
-[ 7372.046181] 53
-[ 7517.423267] Cleaning Up
-[ 7530.024894]  ================================================
-[ 7530.025497] |                                                |
-[ 7530.026103] | Array Size:           12                       |
-[ 7530.026667] | Input File:           Hard coded Array         |
-[ 7530.027233] | Number of Threads:    2                        |
-[ 7530.027789] |                                                |
-[ 7530.028663]  ================================================
-
-[ 7530.029809] Thread#0 Created successfully
-[ 7530.030284] Thread#0 Running
-[ 7530.030735] BEFORE SORT:2 5 3 1 6 8 
-[ 7530.030738] AFTER SORT:1 2 3 5 6 8 
-[ 7531.055059] Thread#1 Created successfully
-[ 7531.056670] Thread#1 Running
-[ 7531.057229] BEFORE SORT:7 9 53 23 3 4 
-[ 7531.057232] AFTER SORT:3 4 7 9 23 53 
-[ 7532.068558] Thread#3 Created successfully
-[ 7532.070038] Thread#3 Running MERGING
-[ 7534.175495] 
-               INPUT ARRAY:
-[ 7534.176850] 25316879532334
-[ 7534.176854] 
-               FINAL RESULT:
-[ 7534.179041] 12334567892353
-[ 7595.112264] Cleaning Up
-[ 7603.344230]  ================================================
-[ 7603.344893] |                                                |
-[ 7603.345496] | Array Size:           12                       |
-[ 7603.346002] | Input File:           Hard coded Array         |
-[ 7603.346511] | Number of Threads:    2                        |
-[ 7603.347012] |                                                |
-[ 7603.347502]  ================================================
-
-[ 7603.348830] Thread#0 Created successfully
-[ 7603.349308] Thread#0 Running
-[ 7603.349760] BEFORE SORT:2 5 3 1 6 8 
-[ 7603.349762] AFTER SORT:1 2 3 5 6 8 
-[ 7604.361638] Thread#1 Created successfully
-[ 7604.362688] Thread#1 Running
-[ 7604.363217] BEFORE SORT:7 9 53 23 3 4 
-[ 7604.363220] AFTER SORT:3 4 7 9 23 53 
-[ 7605.375030] Thread#3 Created successfully
-[ 7605.376304] Thread#3 Running MERGING
-[ 7607.561498] 
-               INPUT ARRAY:
-[ 7607.562851] 
-               FINAL RESULT:
-[ 7607.564116] 1 2 3 3 4 5 6 7 8 9 23 53 
-[ 7663.024231] Cleaning Up
-[ 7672.393414]  ================================================
-[ 7672.393977] |                                                |
-[ 7672.394540] | Array Size:           12                       |
-[ 7672.395399] | Input File:           Hard coded Array         |
-[ 7672.395969] | Number of Threads:    2                        |
-[ 7672.396515] |                                                |
-[ 7672.397008]  ================================================
-
-[ 7672.398232] Thread#0 Created successfully
-[ 7672.398712] Thread#0 Running
-[ 7672.399200] BEFORE SORT:2 5 3 1 6 8 
-[ 7672.399202] AFTER SORT:1 2 3 5 6 8 
-[ 7673.428252] Thread#1 Created successfully
-[ 7673.429307] Thread#1 Running
-[ 7673.429813] BEFORE SORT:7 9 53 23 3 4 
-[ 7673.429815] AFTER SORT:3 4 7 9 23 53 
-[ 7674.441797] Thread#3 Created successfully
-[ 7674.443228] Thread#3 Running MERGING
-[ 7676.468250] 
-               INPUT ARRAY:
-[ 7676.469871] 
-               FINAL RESULT:
-[ 7676.471148] 1 
-[ 7676.471149] 2 
-[ 7676.472009] 3 
-[ 7676.472397] 3 
-[ 7676.472753] 4 
-[ 7676.473064] 5 
-[ 7676.473374] 6 
-[ 7676.473680] 7 
-[ 7676.473979] 8 
-[ 7676.474270] 9 
-[ 7676.474559] 23 
-[ 7676.475121] 53 
-[ 7836.023460] Cleaning Up
-[ 7844.969311]  ================================================
-[ 7844.969946] |                                                |
-[ 7844.970681] | Array Size:           12                       |
-[ 7844.971608] | Input File:           Hard coded Array         |
-[ 7844.972217] | Number of Threads:    2                        |
-[ 7844.972818] |                                                |
-[ 7844.973408]  ================================================
-
-[ 7844.974866] Thread#0 Created successfully
-[ 7844.975465] Thread#0 Running
-[ 7844.976019] BEFORE SORT:2 5 3 1 6 8 
-[ 7844.976022] AFTER SORT:1 2 3 5 6 8 
-[ 7845.988021] Thread#1 Created successfully
-[ 7845.989578] Thread#1 Running
-[ 7845.990294] BEFORE SORT:7 9 53 23 3 4 
-[ 7845.990298] AFTER SORT:3 4 7 9 23 53 
-[ 7847.001270] Thread#3 Created successfully
-[ 7847.002254] Thread#3 Running MERGING
-[ 7849.054873] 
-               INPUT ARRAY:
-[ 7849.056233] 25316879532334
-[ 7849.056237] 
-               FINAL RESULT:
-[ 7849.057753] 1 2 3 3 4 5 6 7 8 9 23 53 
-
-[ 7899.319941] Cleaning Up
-[ 7905.593208]  ================================================
-[ 7905.593810] |                                                |
-[ 7905.594673] | Array Size:           12                       |
-[ 7905.595280] | Input File:           Hard coded Array         |
-[ 7905.595926] | Number of Threads:    2                        |
-[ 7905.596543] |                                                |
-[ 7905.597147]  ================================================
-
-[ 7905.598650] Thread#0 Created successfully
-[ 7905.599224] Thread#0 Running
-[ 7905.599745] BEFORE SORT:2 5 3 1 6 8 
-[ 7905.599747] AFTER SORT:1 2 3 5 6 8 
-[ 7906.628056] Thread#1 Created successfully
-[ 7906.629687] Thread#1 Running
-[ 7906.630507] BEFORE SORT:7 9 53 23 3 4 
-[ 7906.630510] AFTER SORT:3 4 7 9 23 53 
-[ 7907.641205] Thread#3 Created successfully
-[ 7907.642181] Thread#3 Running MERGING
-[ 7909.854628] 
-               INPUT ARRAY:
-[ 7909.855562] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 7909.855566] 
-               FINAL RESULT:
-[ 7909.856837] 1 2 3 3 4 5 6 7 8 9 23 53 
-
-[ 9838.082708] Cleaning Up
-[ 9845.466920]  ================================================
-[ 9845.467472] |                                                |
-[ 9845.468032] | Array Size:           12                       |
-[ 9845.468732] | Input File:           Hard coded Array         |
-[ 9845.469595] | Number of Threads:    3                        |
-[ 9845.470166] |                                                |
-[ 9845.470752]  ================================================
-
-[ 9845.471827] Thread#0 Created successfully
-[ 9845.472361] Thread#0 Running
-[ 9845.472831] BEFORE SORT:2 5 3 1 
-[ 9845.472833] AFTER SORT:1 2 3 5 
-[ 9846.492798] Thread#1 Created successfully
-[ 9846.493882] Thread#1 Running
-[ 9846.494383] BEFORE SORT:6 8 7 9 
-[ 9846.494385] AFTER SORT:6 7 8 9 
-[ 9847.506219] Thread#2 Created successfully
-[ 9847.507659] Thread#2 Running
-[ 9847.508345] BEFORE SORT:53 23 3 4 
-[ 9847.508348] AFTER SORT:3 4 23 53 
-[ 9848.519506] Thread#4 Created successfully
-[ 9848.520876] Thread#4 Running MERGING
-[ 9850.546258] 
-               INPUT ARRAY:
-[ 9850.547499] 2 5 3 1 6 8 7 9 53 23 3 4 
-[ 9850.547504] 
-               FINAL RESULT:
-[ 9850.548915] 1 2 3 3 4 5 6 7 8 9 23 53 
-
-[10224.600762] Cleaning Up
-[10230.850808]  ================================================
-[10230.851427] |                                                |
-[10230.852039] | Array Size:           12                       |
-[10230.852944] | Input File:           Hard coded Array         |
-[10230.853560] | Number of Threads:    3                        |
-[10230.854179] |                                                |
-[10230.854784]  ================================================
-
-[10230.856232] Thread#0 Created successfully
-[10230.856815] -------------------------------
-[10230.856816] Thread#0 -> SORT
-[10230.857853] BEFORE SORT:2 5 3 1 
-[10230.857855] AFTER SORT:1 2 3 5 
-[10231.879020] Thread#1 Created successfully
-[10231.880599] -------------------------------
-[10231.880601] Thread#1 -> SORT
-[10231.881721] BEFORE SORT:6 8 7 9 
-[10231.881723] AFTER SORT:6 7 8 9 
-[10232.892515] Thread#2 Created successfully
-[10232.893957] -------------------------------
-[10232.893958] Thread#2 -> SORT
-[10232.895428] BEFORE SORT:53 23 3 4 
-[10232.895431] AFTER SORT:3 4 23 53 
-[10233.905692] Thread#4 Created successfully
-[10233.907007] ------------------------------
-[10233.907008] Thread#4 -> MERGE
-[10236.039088] 
-               INPUT ARRAY:
-[10236.040257] 2 5 3 1 6 8 7 9 53 23 3 4 
-[10236.040261] 
-               FINAL RESULT:
-[10236.041878] 1 2 3 3 4 5 6 7 8 9 23 53 
-
-[10546.270917] Cleaning Up
-[10559.088405]  ================================================
-[10559.088987] |                                                |
-[10559.089572] | Array Size:           12                       |
-[10559.090152] | Input File:           Hard coded Array         |
-[10559.091031] | Number of Threads:    3                        |
-[10559.091539] |                                                |
-[10559.092213]  ================================================
-
-[10559.093226] Thread#0 Created successfully
-[10559.093700] Thread#0 -> SORT
-[10559.094162] BEFORE SORT:2 5 3 1 
-[10559.094163] AFTER SORT:1 2 3 5 
-[10559.094610] -------------------------------
-[10560.118792] Thread#1 Created successfully
-[10560.119773] Thread#1 -> SORT
-[10560.120217] BEFORE SORT:6 8 7 9 
-[10560.120219] AFTER SORT:6 7 8 9 
-[10560.120668] -------------------------------
-[10561.132474] Thread#2 Created successfully
-[10561.134272] Thread#2 -> SORT
-[10561.135002] BEFORE SORT:53 23 3 4 
-[10561.135006] AFTER SORT:3 4 23 53 
-[10561.135661] -------------------------------
-[10562.145864] Thread#4 Created successfully
-[10562.146840] Thread#4 -> MERGE
-[10562.147244] -----------------------------
-[10564.358821] 
-               INPUT ARRAY:
-[10564.360050] 2 5 3 1 6 8 7 9 53 23 3 4 
-[10564.360053] 
-               FINAL RESULT:
-[10564.361521] 1 2 3 3 4 5 6 7 8 9 23 53 
-
-[10601.136249] Cleaning Up
-[10613.705895]  ================================================
-[10613.706485] |                                                |
-[10613.707078] | Array Size:           12                       |
-[10613.707707] | Input File:           Hard coded Array         |
-[10613.708224] | Number of Threads:    3                        |
-[10613.709665] |                                                |
-[10613.710236]  ================================================
-
-[10613.711421] Thread#0 Created successfully
-[10613.712293] Thread#0 -> SORT
-[10613.712823] BEFORE SORT:2 5 3 1 
-[10613.712825] AFTER SORT:1 2 3 5 
-[10613.713349] -------------------------------
-[10614.732021] Thread#1 Created successfully
-[10614.733294] Thread#1 -> SORT
-[10614.733793] BEFORE SORT:6 8 7 9 
-[10614.733795] AFTER SORT:6 7 8 9 
-[10614.734245] -------------------------------
-[10615.745653] Thread#2 Created successfully
-[10615.747350] Thread#2 -> SORT
-[10615.748068] BEFORE SORT:53 23 3 4 
-[10615.748071] AFTER SORT:3 4 23 53 
-[10615.748861] -------------------------------
-[10616.758928] Thread#3 Created successfully
-[10616.760441] Thread#3 -> MERGE
-[10616.761081] -----------------------------
-[10618.972478] 
-               INPUT ARRAY:
-[10618.973720] 2 5 3 1 6 8 7 9 53 23 3 4 
-[10618.973724] 
-               FINAL RESULT:
-[10618.974923] 1 2 3 3 4 5 6 7 8 9 23 53 
-
-[10833.789600] Cleaning Up
-[10839.614679]  ================================================
-[10839.615265] |                                                |
-[10839.616090] | Array Size:           12                       |
-[10839.616655] | Input File:           Hard coded Array         |
-[10839.617239] | Number of Threads:    3                        |
-[10839.617728] |                                                |
-[10839.618232]  ================================================
-
-[10839.619235] Thread#0 Created successfully
-[10839.620335] Thread#0 -> SORT
-[10839.621069] BEFORE SORT:2 5 3 1 
-[10839.621072] AFTER SORT:1 2 3 5 
-[10839.621809] -------------------------------
-[10840.625457] Thread#1 Created successfully
-[10840.627101] Thread#1 -> SORT
-[10840.627867] BEFORE SORT:6 8 7 9 
-[10840.627870] AFTER SORT:6 7 8 9 
-[10840.628749] -------------------------------
-[10841.638421] Thread#2 Created successfully
-[10841.639868] Thread#2 -> SORT
-[10841.640541] BEFORE SORT:53 23 3 4 
-[10841.640544] AFTER SORT:3 4 23 53 
-[10841.641191] -------------------------------
-[10842.651856] Thread#3 Created successfully
-[10842.652742] Thread#3 -> MERGE
-[10842.653160] -----------------------------
-[10844.678785] 
-               INPUT ARRAY:
-[10844.680570] 2 5 3 1 6 8 7 9 53 23 3 4 
-[10844.680575] 
-               FINAL RESULT:
-[10844.682766] 1 2 3 3 4 5 6 7 8 9 23 53 
-
-[11594.544685] e1000: enp0s3 NIC Link is Down
-[11596.678323] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
-[12257.050979] Cleaning Up
-[12274.540013]  ================================================
-[12274.540582] |                                                |
-[12274.541091] | Array Size:           12                       |
-[12274.541494] | Input File:           Hard coded Array         |
-[12274.541901] | Number of Threads:    3                        |
-[12274.542307] |                                                |
-[12274.542711]  ================================================
-
-[12274.543634] Thread#0 Created successfully
-[12274.544032] Thread#0 -> SORT
-[12274.544404] BEFORE SORT:2 5 3 1 
-[12274.544405] AFTER SORT:1 2 3 5 
-[12274.544803] -------------------------------
-[12275.557194] Thread#1 Created successfully
-[12275.558064] Thread#1 -> SORT
-[12275.558626] BEFORE SORT:6 8 7 9 
-[12275.558629] AFTER SORT:6 7 8 9 
-[12275.559111] -------------------------------
-[12276.570490] Thread#2 Created successfully
-[12276.571303] Thread#2 -> SORT
-[12276.571724] BEFORE SORT:53 23 3 4 
-[12276.571726] AFTER SORT:3 4 23 53 
-[12276.572121] -------------------------------
-[12277.584030] Thread#3 Created successfully
-[12277.585302] Thread#3 -> MERGE
-[12277.585882] -----------------------------
-[12279.770493] 
-               INPUT ARRAY:
-[12279.772518] 2 5 3 1 6 8 7 9 53 23 3 4 
-[12279.772524] 
-               FINAL RESULT:
-[12279.775744] 1 2 3 3 4 5 6 7 8 9 23 53 
-
+[  664.902591] Cleaning Up
