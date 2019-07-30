@@ -109,47 +109,12 @@ void merger(void *params)
     } 
 }
 
-void *merge_routine(void* Ptr)
-{
-    parameters *p = Ptr;
-    /*
-    printf("--------------------------------\n");
-    printf("Thread id is: %d MERGE ROUTINE \n", p->tid);
-    */
-    int i, j, num_samples, num_threads;
-    num_threads = p->nt;
-    num_samples = p->ns;
-
-    for(i =0; i<num_threads; i++)
-    {   
-        data = (parameters*)vmalloc(sizeof(parameters));
-        data->from_index = i*num_samples/num_threads;
-        data->to_index = data->from_index + num_samples/num_threads - 1;
-        /*Consider in the case of i==0, directly copy frist block to result*/
-        if (i==0)
-        {
-            for (j=0; j<=data->to_index; j++)
-            {
-                result[j] = list[j];
-            }
-        }
-        else
-        {
-            merger(data);
-        } 
-    };
-    /*
-    free(Ptr);
-    pthread_exit(NULL);
-    */
-}
-
 // Function executed by kernel thread
 static int sort_fn(void *Ptr)
 {
     parameters *data = Ptr;
     int i;
-    printk(KERN_INFO "Thread#%d Running\n", data->tid);
+    printk(KERN_INFO "Thread#%d -> SORT\n", data->tid);
     printk(KERN_INFO "BEFORE SORT:");
     for(i=data->from_index; i<=data->to_index; i++)
     {
@@ -161,6 +126,7 @@ static int sort_fn(void *Ptr)
     {
         printk(KERN_CONT "%d ", list[i]);
     }
+    printk(KERN_INFO "-------------------------------");
     do_exit(0);
     return 0;
 }
@@ -168,7 +134,7 @@ static int sort_fn(void *Ptr)
 static int merge_fn(void *Ptr)
 {
     parameters *p = Ptr;
-    printk(KERN_INFO "Thread#%d Running MERGING\n", p->tid);
+    printk(KERN_INFO "Thread#%d -> MERGE\n", p->tid);
     int i, j, num_samples, num_threads;
     num_threads = p->nt;
     num_samples = p->ns;
@@ -191,7 +157,7 @@ static int merge_fn(void *Ptr)
             merger(data);
         } 
     };
-
+    printk(KERN_INFO "-----------------------------");
     do_exit(0);
     return 0;
 }
@@ -202,7 +168,7 @@ static int __init init_thread(void)
     /* ============================== READ SECTION ================================*/
 
     int num_samples = 12;
-    int num_threads = 2;
+    int num_threads = 3;
     char *FileName = "Hard coded Array";
     int i;
 
@@ -218,11 +184,6 @@ static int __init init_thread(void)
     for(i=0; i<num_samples; i++)
     {
         list[i] = input[i];
-    }
-    printk(KERN_INFO "\nINPUT ARRAY:\n");
-    for(i=0; i<num_samples; i++)
-    {
-        printk(KERN_CONT "%d ", input[i]);
     }
     /* ============================== SORT SECTION ================================*/
 
@@ -243,7 +204,6 @@ static int __init init_thread(void)
     };
 
     /* ============================== MERGE SECTION ================================*/
-    i++;
     data = (parameters*)vmalloc(sizeof(parameters));
     data->from_index = 0;
     data->to_index = 0;
@@ -258,12 +218,17 @@ static int __init init_thread(void)
         printk(KERN_ERR "Thread#%d creation failed\n", i);
     ssleep(2);
     /* ============================== OUTPUTS DISPLAY ================================*/
-    printk(KERN_INFO "\nFINAL RESULT:\n");
-    for(i=0; i<num_samples; i++)
+    printk(KERN_INFO "\nINPUT ARRAY:\n");
+    for (i=0; i<num_samples; i++)
     {
-        printk(KERN_CONT "%d ", result[i]);
+    printk(KERN_CONT "%d ", input[i]);
     }
-
+    printk(KERN_INFO "\nFINAL RESULT:\n");
+    for (i=0; i<num_samples; i++)
+    {
+    printk(KERN_CONT "%d ", result[i]);
+    }
+    printk(KERN_INFO "\n");
     return 0;
 }
 // Module Exit
